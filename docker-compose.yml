@@ -42,9 +42,9 @@ services:
       - LETSENCRYPT_EMAIL=${AUTO_SSL_LETSENCRYPT_EMAIL}
       - VIRTUAL_PORT=${AUTO_SSL_VIRTUAL_PORT}
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - .:/opt/app
-      - strapi_node_modules:/opt/app/node_modules
+       - .:/opt/app
+       - strapi_node_modules:/opt/app/node_modules
+       - /var/run/docker.sock:/var/run/docker.sock
     ports:
       - "1337:1337"
     depends_on:
