@@ -173,3 +173,5 @@ ssh-keygen -t rsa -b 4096 -C "your-email@example.com"
 
 - [Discord](https://discord.strapi.io) - Сообщество Strapi
 - [Forum](https://forum.strapi.io/) - Форум поддержки
+
+\*\*
