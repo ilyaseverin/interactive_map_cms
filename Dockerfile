@@ -1,18 +1,10 @@
 FROM node:22-alpine
 
-# Установка зависимостей для работы с PostgreSQL
+# Установка только необходимых зависимостей
 RUN apk add --no-cache \
-    build-base \
-    gcc \
-    autoconf \
-    automake \
-    zlib-dev \
-    libpng-dev \
-    nasm \
     bash \
     vips-dev \
-    git \
-    && rm -rf /var/cache/apk/*
+    git
 
 ARG NODE_ENV=development
 ENV NODE_ENV=${NODE_ENV}
@@ -21,8 +13,12 @@ WORKDIR /opt/app
 
 # Копируем package.json и устанавливаем зависимости
 COPY package.json package-lock.json ./
+
+# Настройки npm для экономии памяти
 RUN npm config set fetch-retry-maxtimeout 600000 -g && \
-    npm ci --silent
+    npm config set fetch-retry-mintimeout 10000 -g && \
+    npm config set fetch-retries 3 -g && \
+    npm ci --silent --no-audit --no-fund
 
 # Копируем остальные файлы
 COPY . .
@@ -30,8 +26,8 @@ COPY . .
 # Создаем папку для загрузок
 RUN mkdir -p public/uploads
 
-# Собираем проект
-RUN npm run build
+# Собираем проект с ограничением памяти
+RUN NODE_OPTIONS="--max-old-space-size=1024" npm run build
 
 EXPOSE 1337
 

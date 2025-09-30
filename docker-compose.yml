@@ -1,4 +1,4 @@
-# version: '3.8' - deprecated, removed to avoid warnings
+version: '3.8'
 
 services:
   postgres:

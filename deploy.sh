@@ -18,17 +18,14 @@ export $(cat .env | grep -v '^#' | xargs)
 echo "🛑 Останавливаем старые контейнеры..."
 docker-compose down
 
-# Обновляем образы
-echo "📥 Обновляем Docker образы..."
-docker-compose pull
-
-# Собираем и запускаем новые контейнеры
-echo "🔨 Собираем и запускаем контейнеры..."
-docker-compose up -d --build
-
-# Очищаем неиспользуемые образы
+# Очищаем неиспользуемые образы перед сборкой
 echo "🧹 Очищаем неиспользуемые Docker образы..."
 docker system prune -f
+
+# Собираем и запускаем новые контейнеры с ограничением памяти
+echo "🔨 Собираем и запускаем контейнеры..."
+DOCKER_BUILDKIT=1 docker-compose build --no-cache --parallel
+docker-compose up -d
 
 # Проверяем статус
 echo "✅ Проверяем статус сервисов..."
