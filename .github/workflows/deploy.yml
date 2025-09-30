@@ -21,6 +21,13 @@ jobs:
           port: ${{ secrets.SERVER_PORT || 22 }}
           script: |
             cd /opt/strapi-cms
+            # Настраиваем Git для работы с токеном
+            git config --global user.email "deploy@example.com"
+            git config --global user.name "Deploy Bot"
+            # Настраиваем Git для работы без интерактивного ввода пароля
+            git config --global credential.helper store
+            # Используем токен для аутентификации
+            git remote set-url origin https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
             git pull origin main
             docker-compose down
             docker-compose build --no-cache
