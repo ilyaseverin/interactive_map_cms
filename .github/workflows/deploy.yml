@@ -24,10 +24,13 @@ jobs:
             # Настраиваем Git для работы с токеном
             git config --global user.email "deploy@example.com"
             git config --global user.name "Deploy Bot"
-            # Настраиваем Git для работы без интерактивного ввода пароля
+            # Настраиваем Git для автоматического использования токена
             git config --global credential.helper store
-            # Используем токен для аутентификации
-            git remote set-url origin https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+            git config --global credential.https://github.com.username ${{ github.actor }}
+            # Создаем файл с токеном для автоматической аутентификации
+            echo "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com" > ~/.git-credentials
+            # Используем токен в URL для аутентификации
+            git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
             git pull origin main
             docker-compose down
             docker-compose build --no-cache
