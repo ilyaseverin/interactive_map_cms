@@ -11,7 +11,8 @@ RUN apk add --no-cache \
     nasm \
     bash \
     vips-dev \
-    git
+    git \
+    && rm -rf /var/cache/apk/*
 
 ARG NODE_ENV=development
 ENV NODE_ENV=${NODE_ENV}
