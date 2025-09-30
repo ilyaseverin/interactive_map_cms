@@ -58,4 +58,5 @@ volumes:
 
 networks:
   strapi-network:
+    name: strapi-network
     driver: bridge
