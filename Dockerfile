@@ -26,6 +26,9 @@ RUN npm config set fetch-retry-maxtimeout 600000 -g && \
 # Копируем остальные файлы
 COPY . .
 
+# Создаем папку для загрузок
+RUN mkdir -p public/uploads
+
 # Собираем проект
 RUN npm run build
 
