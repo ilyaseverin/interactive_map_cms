@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "contact_pages",
+  "info": {
+    "singularName": "contact-page",
+    "pluralName": "contact-pages",
+    "displayName": "Контакты / Contacts",
+    "description": "Контакты учреждения"
+  },
+  "options": { "draftAndPublish": true },
+  "attributes": {
+    "address": { "type": "string", "required": true },
+    "phones": { "type": "component", "repeatable": true, "component": "contacts.phone" },
+    "website": { "type": "string" },
+    "email": { "type": "email" },
+    "map_embed": { "type": "text" }
+  }
+}

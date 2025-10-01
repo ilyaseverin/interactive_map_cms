@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "methodics",
+  "info": {
+    "singularName": "methodic",
+    "pluralName": "methodics",
+    "displayName": "Методические рекомендации",
+    "description": "Методические рекомендации"
+  },
+  "options": { "draftAndPublish": true },
+  "attributes": {
+    "title": { "type": "string", "required": true },
+    "content": { "type": "richtext" },
+    "attachments": { "type": "component", "repeatable": true, "component": "media.document" },
+    "links": { "type": "component", "repeatable": true, "component": "meta.link" },
+    "slug": { "type": "uid", "targetField": "title", "unique": true }
+  }
+}

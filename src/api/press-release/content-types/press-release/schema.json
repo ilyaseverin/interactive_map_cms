@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "press_releases",
+  "info": {
+    "singularName": "press-release",
+    "pluralName": "press-releases",
+    "displayName": "Пресс-релизы (для СМИ)",
+    "description": "Материалы для СМИ"
+  },
+  "options": { "draftAndPublish": true },
+  "attributes": {
+    "title": { "type": "string", "required": true },
+    "published_at_date": { "type": "date", "required": true },
+    "author": { "type": "string" },
+    "excerpt": { "type": "text" },
+    "content": { "type": "richtext" },
+    "cover": { "type": "media", "allowedTypes": ["images"], "multiple": false },
+    "gallery": { "type": "media", "allowedTypes": ["images"], "multiple": true },
+    "attachments": { "type": "component", "repeatable": true, "component": "media.document" },
+    "category": { "type": "string" },
+    "keywords": { "type": "component", "repeatable": true, "component": "meta.tag" },
+    "slug": { "type": "uid", "targetField": "title", "unique": true }
+  }
+}

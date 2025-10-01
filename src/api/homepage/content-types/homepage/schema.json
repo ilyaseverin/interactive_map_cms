@@ -1,0 +1,17 @@
+{
+  "kind": "singleType",
+  "collectionName": "homepage",
+  "info": {
+    "singularName": "homepage",
+    "pluralName": "homepages",
+    "displayName": "Главная (быстрые переходы)",
+    "description": "Главная страница"
+  },
+  "options": { "draftAndPublish": true },
+  "attributes": {
+    "shortcuts": { "type": "component", "repeatable": true, "component": "ui.shortcut" },
+    "hero_title": { "type": "string" },
+    "hero_subtitle": { "type": "string" },
+    "hero_image": { "type": "media", "allowedTypes": ["images"], "multiple": false }
+  }
+}

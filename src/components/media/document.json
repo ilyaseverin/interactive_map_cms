@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_media_documents",
+  "info": {
+    "displayName": "Документ",
+    "description": "Файл документа с описанием"
+  },
+  "attributes": {
+    "title": { "type": "string" },
+    "file": { "type": "media", "allowedTypes": ["files"], "multiple": false },
+    "description": { "type": "text" }
+  }
+}

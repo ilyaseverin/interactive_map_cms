@@ -1,0 +1,10 @@
+{
+  "collectionName": "components_meta_tags",
+  "info": {
+    "displayName": "Тег",
+    "description": "Простой тег"
+  },
+  "attributes": {
+    "value": { "type": "string" }
+  }
+}

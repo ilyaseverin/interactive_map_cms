@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "singularName": "event",
+    "pluralName": "events",
+    "displayName": "Календарь событий / события",
+    "description": "Календарь событий"
+  },
+  "options": { "draftAndPublish": true },
+  "attributes": {
+    "title": { "type": "string", "required": true },
+    "datetime_start": { "type": "datetime", "required": true },
+    "location": { "type": "string" },
+    "location_map_link": { "type": "string" },
+    "event_type": { "type": "string" },
+    "description": { "type": "richtext", "required": true },
+    "cover": { "type": "media", "allowedTypes": ["images"], "multiple": false },
+    "gallery": { "type": "media", "allowedTypes": ["images"], "multiple": true },
+    "videos": { "type": "component", "repeatable": true, "component": "media.video-link" },
+    "attachments": { "type": "component", "repeatable": true, "component": "media.document" },
+    "slug": { "type": "uid", "targetField": "title", "unique": true }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "brand",
+  "info": {
+    "singularName": "brand",
+    "pluralName": "brands",
+    "displayName": "Фирменный стиль / Бренд",
+    "description": "Брендбук, символика и материалы"
+  },
+  "options": { "draftAndPublish": true },
+  "attributes": {
+    "title": { "type": "string", "default": "Фирменный стиль" },
+    "brand_colors": { "type": "json" },
+    "symbols": { "type": "richtext" },
+    "logos": { "type": "media", "allowedTypes": ["images"], "multiple": true },
+    "extra_info": { "type": "richtext" }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_ui_shortcuts",
+  "info": {
+    "displayName": "Быстрый переход",
+    "description": "Значок-ярлык для главной"
+  },
+  "attributes": {
+    "title": { "type": "string" },
+    "icon": { "type": "media", "allowedTypes": ["images"], "multiple": false },
+    "url": { "type": "string" }
+  }
+}
