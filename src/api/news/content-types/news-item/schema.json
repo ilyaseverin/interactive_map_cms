@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "news",
+  "info": {
+    "singularName": "news-item",
+    "pluralName": "news",
+    "displayName": "Новости",
+    "description": "Новости центра"
+  },
+  "options": { "draftAndPublish": true },
+  "attributes": {
+    "title": { "type": "string", "required": true },
+    "published_at_date": { "type": "date", "required": true },
+    "excerpt": { "type": "text" },
+    "content": { "type": "richtext" },
+    "cover": { "type": "media", "allowedTypes": ["images"], "multiple": false },
+    "gallery": { "type": "media", "allowedTypes": ["images"], "multiple": true },
+    "video_links": { "type": "component", "repeatable": true, "component": "media.video-link" },
+    "category": { "type": "enumeration", "enum": ["Главные", "Региональные"] },
+    "tags": { "type": "component", "repeatable": true, "component": "meta.tag" },
+    "slug": { "type": "uid", "targetField": "title", "unique": true }
+  }
+}

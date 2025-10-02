@@ -1,0 +1,11 @@
+{
+  "collectionName": "components_contacts_phones",
+  "info": {
+    "displayName": "Телефон",
+    "description": "Телефон отдела/сотрудника"
+  },
+  "attributes": {
+    "label": { "type": "string" },
+    "number": { "type": "string" }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "team_members",
+  "info": {
+    "singularName": "team-member",
+    "pluralName": "team-members",
+    "displayName": "Команда (сотрудники)",
+    "description": "Сотрудники команды"
+  },
+  "options": { "draftAndPublish": true },
+  "attributes": {
+    "full_name": { "type": "string", "required": true },
+    "position": { "type": "string", "required": true },
+    "photo": { "type": "media", "allowedTypes": ["images"], "multiple": false },
+    "order": { "type": "integer", "default": 0 },
+    "slug": { "type": "uid", "targetField": "full_name", "unique": true }
+  }
+}

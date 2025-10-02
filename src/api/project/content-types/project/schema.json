@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projects",
+  "info": {
+    "singularName": "project",
+    "pluralName": "projects",
+    "displayName": "Наши проекты",
+    "description": "Наши проекты"
+  },
+  "options": { "draftAndPublish": true },
+  "attributes": {
+    "external_id": { "type": "string" },
+    "title": { "type": "string", "required": true },
+    "excerpt": { "type": "text" },
+    "content": { "type": "richtext" },
+    "material_type": { "type": "enumeration", "enum": ["новость", "анонс", "объявление", "прочее"] },
+    "category": { "type": "string" },
+    "cover": { "type": "media", "allowedTypes": ["images"], "multiple": false },
+    "gallery": { "type": "media", "allowedTypes": ["images"], "multiple": true },
+    "videos": { "type": "component", "repeatable": true, "component": "media.video-link" },
+    "attachments": { "type": "component", "repeatable": true, "component": "media.document" },
+    "external_links": { "type": "component", "repeatable": true, "component": "meta.link" },
+    "tags": { "type": "component", "repeatable": true, "component": "meta.tag" },
+    "slug": { "type": "uid", "targetField": "title", "unique": true }
+  }
+}

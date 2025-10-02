@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "photo_albums",
+  "info": {
+    "singularName": "photo-album",
+    "pluralName": "photo-albums",
+    "displayName": "Фотографии / Фотоальбомы",
+    "description": "Фотогалереи и альбомы"
+  },
+  "options": { "draftAndPublish": true },
+  "attributes": {
+    "title": { "type": "string", "required": true },
+    "cover": { "type": "media", "allowedTypes": ["images"], "multiple": false },
+    "photos": { "type": "media", "allowedTypes": ["images"], "multiple": true },
+    "external_album_url": { "type": "string" },
+    "slug": { "type": "uid", "targetField": "title", "unique": true }
+  }
+}

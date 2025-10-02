@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_media_video_links",
+  "info": {
+    "displayName": "Видео-ссылка",
+    "description": "Видео-ссылка (YouTube/VK/RuTube/Другое)"
+  },
+  "attributes": {
+    "provider": {
+      "type": "enumeration",
+      "enum": ["YouTube", "RuTube", "VK", "Другое"],
+      "default": "Другое"
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "open_in_vk": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

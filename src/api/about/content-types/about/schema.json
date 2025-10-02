@@ -1,0 +1,15 @@
+{
+  "kind": "singleType",
+  "collectionName": "about",
+  "info": {
+    "singularName": "about",
+    "pluralName": "abouts",
+    "displayName": "Об учреждении",
+    "description": "Страница об учреждении"
+  },
+  "options": { "draftAndPublish": true },
+  "attributes": {
+    "title": { "type": "string", "default": "Об учреждении" },
+    "body": { "type": "richtext" }
+  }
+}

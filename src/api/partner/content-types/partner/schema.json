@@ -1,0 +1,17 @@
+{
+  "kind": "collectionType",
+  "collectionName": "partners",
+  "info": {
+    "singularName": "partner",
+    "pluralName": "partners",
+    "displayName": "Партнёры",
+    "description": "Партнёрские организации"
+  },
+  "options": { "draftAndPublish": true },
+  "attributes": {
+    "name": { "type": "string", "required": true },
+    "logo": { "type": "media", "allowedTypes": ["images"], "multiple": false },
+    "url": { "type": "string" },
+    "slug": { "type": "uid", "targetField": "name", "unique": true }
+  }
+}

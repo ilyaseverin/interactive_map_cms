@@ -1,0 +1,11 @@
+{
+  "collectionName": "components_meta_links",
+  "info": {
+    "displayName": "Ссылка",
+    "description": "Внешняя ссылка"
+  },
+  "attributes": {
+    "label": { "type": "string" },
+    "url": { "type": "string" }
+  }
+}
