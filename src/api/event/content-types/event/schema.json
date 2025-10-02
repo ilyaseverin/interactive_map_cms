@@ -7,18 +7,63 @@
     "displayName": "Календарь событий / события",
     "description": "Календарь событий"
   },
-  "options": { "draftAndPublish": true },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
   "attributes": {
-    "title": { "type": "string", "required": true },
-    "datetime_start": { "type": "datetime", "required": true },
-    "location": { "type": "string" },
-    "location_map_link": { "type": "string" },
-    "event_type": { "type": "string" },
-    "description": { "type": "richtext", "required": true },
-    "cover": { "type": "media", "allowedTypes": ["images"], "multiple": false },
-    "gallery": { "type": "media", "allowedTypes": ["images"], "multiple": true },
-    "videos": { "type": "component", "repeatable": true, "component": "media.video-link" },
-    "attachments": { "type": "component", "repeatable": true, "component": "media.document" },
-    "slug": { "type": "uid", "targetField": "title", "unique": true }
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "datetime_start": {
+      "type": "datetime",
+      "required": true
+    },
+    "location": {
+      "type": "string"
+    },
+    "location_map_link": {
+      "type": "customField",
+      "customField": "plugin::strapi-location-picker.location-picker",
+      "options": {
+        "info": true
+      }
+    },
+    "event_type": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "cover": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "videos": {
+      "type": "component",
+      "component": "media.video-link",
+      "repeatable": true
+    },
+    "attachments": {
+      "type": "component",
+      "component": "media.document",
+      "repeatable": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    }
   }
 }
