@@ -9,7 +9,9 @@
   },
   "options": { "draftAndPublish": true },
   "attributes": {
-    "basic_info": { "type": "component", "repeatable": false, "component": "person.basic-info", "required": true },
-    "media": { "type": "component", "repeatable": false, "component": "person.media" }
+    "full_name": { "type": "string", "required": true },
+    "slug": { "type": "uid", "targetField": "full_name" },
+    "photo": { "type": "media", "multiple": false, "allowedTypes": ["images"] },
+    "basic_info": { "type": "component", "repeatable": false, "component": "person.basic-info", "required": true }
   }
 }

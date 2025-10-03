@@ -59,18 +59,6 @@ export interface DocumentBasicInfo extends Struct.ComponentSchema {
   attributes: {
     category: Schema.Attribute.String;
     description: Schema.Attribute.Text;
-    slug: Schema.Attribute.UID<'title'>;
-    title: Schema.Attribute.String;
-  };
-}
-
-export interface DocumentFile extends Struct.ComponentSchema {
-  collectionName: 'components_document_file';
-  info: {
-    displayName: '\u0424\u0430\u0439\u043B';
-  };
-  attributes: {
-    file: Schema.Attribute.Media<'files'>;
   };
 }
 
@@ -89,14 +77,12 @@ export interface EventAdditionalMaterials extends Struct.ComponentSchema {
 export interface EventBasicInfo extends Struct.ComponentSchema {
   collectionName: 'components_event_basic_infos';
   info: {
-    description: '\u041D\u0430\u0437\u0432\u0430\u043D\u0438\u0435, \u0434\u0430\u0442\u0430/\u0432\u0440\u0435\u043C\u044F, \u043A\u0430\u0442\u0435\u0433\u043E\u0440\u0438\u044F, \u0441\u043B\u0430\u0433';
+    description: '\u0414\u0430\u0442\u0430/\u0432\u0440\u0435\u043C\u044F, \u043A\u0430\u0442\u0435\u0433\u043E\u0440\u0438\u044F';
     displayName: '\u041E\u0441\u043D\u043E\u0432\u043D\u043E\u0435';
   };
   attributes: {
     category: Schema.Attribute.String;
     datetime_start: Schema.Attribute.DateTime & Schema.Attribute.Required;
-    slug: Schema.Attribute.UID<'title'>;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -195,17 +181,6 @@ export interface MetaTag extends Struct.ComponentSchema {
   };
 }
 
-export interface MethodicBasicInfo extends Struct.ComponentSchema {
-  collectionName: 'components_methodic_basic_infos';
-  info: {
-    displayName: '\u041E\u0441\u043D\u043E\u0432\u043D\u043E\u0435';
-  };
-  attributes: {
-    slug: Schema.Attribute.UID<'title'>;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
-  };
-}
-
 export interface MethodicContent extends Struct.ComponentSchema {
   collectionName: 'components_methodic_content';
   info: {
@@ -221,7 +196,7 @@ export interface MethodicContent extends Struct.ComponentSchema {
 export interface NewsBasicInfo extends Struct.ComponentSchema {
   collectionName: 'components_news_basic_infos';
   info: {
-    description: '\u0417\u0430\u0433\u043E\u043B\u043E\u0432\u043E\u043A, \u0434\u0430\u0442\u0430, \u043A\u0430\u0442\u0435\u0433\u043E\u0440\u0438\u044F, \u0441\u043B\u0430\u0433';
+    description: '\u0414\u0430\u0442\u0430, \u043A\u0430\u0442\u0435\u0433\u043E\u0440\u0438\u044F';
     displayName: '\u041E\u0441\u043D\u043E\u0432\u043D\u043E\u0435';
   };
   attributes: {
@@ -232,8 +207,6 @@ export interface NewsBasicInfo extends Struct.ComponentSchema {
       ]
     >;
     published_at_date: Schema.Attribute.Date & Schema.Attribute.Required;
-    slug: Schema.Attribute.UID<'title'>;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -273,25 +246,6 @@ export interface NewsMeta extends Struct.ComponentSchema {
   };
 }
 
-export interface PageBasicInfo extends Struct.ComponentSchema {
-  collectionName: 'components_page_basic_infos';
-  info: {
-    displayName: '\u041E\u0441\u043D\u043E\u0432\u043D\u043E\u0435';
-  };
-  attributes: {
-    category: Schema.Attribute.Enumeration<
-      [
-        '\u0410\u043D\u0442\u0438\u043C\u043E\u043D\u043E\u043F\u043E\u043B\u044C\u043D\u044B\u0439 \u043A\u043E\u043C\u043F\u043B\u0435\u043A\u0441',
-        '\u0410\u043D\u0442\u0438\u043A\u043E\u0440\u0440\u0443\u043F\u0446\u0438\u043E\u043D\u043D\u0430\u044F \u0434\u0435\u044F\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u044C',
-        '\u041F\u0440\u043E\u0442\u0438\u0432\u043E\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435 \u0442\u0435\u0440\u0440\u043E\u0440\u0438\u0437\u043C\u0443',
-        '\u0410\u043D\u0442\u0438\u043D\u0430\u0440\u043A\u043E\u0442\u0438\u0447\u0435\u0441\u043A\u0430\u044F \u043A\u0430\u043C\u043F\u0430\u043D\u0438\u044F',
-      ]
-    >;
-    slug: Schema.Attribute.UID<'title'>;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
-  };
-}
-
 export interface PageContent extends Struct.ComponentSchema {
   collectionName: 'components_page_content';
   info: {
@@ -304,60 +258,14 @@ export interface PageContent extends Struct.ComponentSchema {
   };
 }
 
-export interface PartnerBasicInfo extends Struct.ComponentSchema {
-  collectionName: 'components_partner_basic_infos';
-  info: {
-    displayName: '\u041E\u0441\u043D\u043E\u0432\u043D\u043E\u0435';
-  };
-  attributes: {
-    name: Schema.Attribute.String & Schema.Attribute.Required;
-    slug: Schema.Attribute.UID<'name'>;
-    url: Schema.Attribute.String;
-  };
-}
-
-export interface PartnerMedia extends Struct.ComponentSchema {
-  collectionName: 'components_partner_media';
-  info: {
-    displayName: '\u041C\u0435\u0434\u0438\u0430';
-  };
-  attributes: {
-    logo: Schema.Attribute.Media<'images'>;
-  };
-}
-
 export interface PersonBasicInfo extends Struct.ComponentSchema {
   collectionName: 'components_person_basic_infos';
   info: {
     displayName: '\u041E\u0441\u043D\u043E\u0432\u043D\u043E\u0435';
   };
   attributes: {
-    full_name: Schema.Attribute.String & Schema.Attribute.Required;
     order: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
     position: Schema.Attribute.String & Schema.Attribute.Required;
-    slug: Schema.Attribute.UID<'full_name'>;
-  };
-}
-
-export interface PersonMedia extends Struct.ComponentSchema {
-  collectionName: 'components_person_media';
-  info: {
-    displayName: '\u041C\u0435\u0434\u0438\u0430';
-  };
-  attributes: {
-    photo: Schema.Attribute.Media<'images'>;
-  };
-}
-
-export interface PhotoAlbumBasicInfo extends Struct.ComponentSchema {
-  collectionName: 'components_photo_album_basic_infos';
-  info: {
-    displayName: '\u041E\u0441\u043D\u043E\u0432\u043D\u043E\u0435';
-  };
-  attributes: {
-    external_album_url: Schema.Attribute.String;
-    slug: Schema.Attribute.UID<'title'>;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -386,15 +294,13 @@ export interface PressReleaseAttachments extends Struct.ComponentSchema {
 export interface PressReleaseBasicInfo extends Struct.ComponentSchema {
   collectionName: 'components_press_release_basic_infos';
   info: {
-    description: '\u0417\u0430\u0433\u043E\u043B\u043E\u0432\u043E\u043A, \u0434\u0430\u0442\u0430, \u0430\u0432\u0442\u043E\u0440, \u043A\u0430\u0442\u0435\u0433\u043E\u0440\u0438\u044F, \u0441\u043B\u0430\u0433';
+    description: '\u0414\u0430\u0442\u0430, \u0430\u0432\u0442\u043E\u0440, \u043A\u0430\u0442\u0435\u0433\u043E\u0440\u0438\u044F';
     displayName: '\u041E\u0441\u043D\u043E\u0432\u043D\u043E\u0435';
   };
   attributes: {
     author: Schema.Attribute.String;
     category: Schema.Attribute.String;
     published_at_date: Schema.Attribute.Date & Schema.Attribute.Required;
-    slug: Schema.Attribute.UID<'title'>;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -447,7 +353,7 @@ export interface ProjectAttachments extends Struct.ComponentSchema {
 export interface ProjectBasicInfo extends Struct.ComponentSchema {
   collectionName: 'components_project_basic_infos';
   info: {
-    description: '\u0417\u0430\u0433\u043E\u043B\u043E\u0432\u043E\u043A, \u0442\u0438\u043F, \u043A\u0430\u0442\u0435\u0433\u043E\u0440\u0438\u044F, \u0441\u043B\u0430\u0433';
+    description: '\u0422\u0438\u043F, \u043A\u0430\u0442\u0435\u0433\u043E\u0440\u0438\u044F';
     displayName: '\u041E\u0441\u043D\u043E\u0432\u043D\u043E\u0435';
   };
   attributes: {
@@ -460,8 +366,6 @@ export interface ProjectBasicInfo extends Struct.ComponentSchema {
         '\u043F\u0440\u043E\u0447\u0435\u0435',
       ]
     >;
-    slug: Schema.Attribute.UID<'title'>;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -544,7 +448,6 @@ declare module '@strapi/strapi' {
       'contacts.main': ContactsMain;
       'contacts.phone': ContactsPhone;
       'document.basic-info': DocumentBasicInfo;
-      'document.file': DocumentFile;
       'event.additional-materials': EventAdditionalMaterials;
       'event.basic-info': EventBasicInfo;
       'event.content-info': EventContentInfo;
@@ -554,19 +457,13 @@ declare module '@strapi/strapi' {
       'media.video-link': MediaVideoLink;
       'meta.link': MetaLink;
       'meta.tag': MetaTag;
-      'methodic.basic-info': MethodicBasicInfo;
       'methodic.content': MethodicContent;
       'news.basic-info': NewsBasicInfo;
       'news.content-info': NewsContentInfo;
       'news.media': NewsMedia;
       'news.meta': NewsMeta;
-      'page.basic-info': PageBasicInfo;
       'page.content': PageContent;
-      'partner.basic-info': PartnerBasicInfo;
-      'partner.media': PartnerMedia;
       'person.basic-info': PersonBasicInfo;
-      'person.media': PersonMedia;
-      'photo-album.basic-info': PhotoAlbumBasicInfo;
       'photo-album.media': PhotoAlbumMedia;
       'press-release.attachments': PressReleaseAttachments;
       'press-release.basic-info': PressReleaseBasicInfo;

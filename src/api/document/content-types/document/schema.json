@@ -9,7 +9,9 @@
   },
   "options": { "draftAndPublish": true },
   "attributes": {
-    "basic_info": { "type": "component", "repeatable": false, "component": "document.basic-info", "required": true },
-    "file_block": { "type": "component", "repeatable": false, "component": "document.file" }
+    "title": { "type": "string" },
+    "slug": { "type": "uid", "targetField": "title" },
+    "file": { "type": "media", "multiple": false, "allowedTypes": ["files"] },
+    "basic_info": { "type": "component", "repeatable": false, "component": "document.basic-info", "required": true }
   }
 }

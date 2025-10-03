@@ -3,8 +3,6 @@
   "info": { "displayName": "Основное" },
   "options": {},
   "attributes": {
-    "title": { "type": "string" },
-    "slug": { "type": "uid", "targetField": "title" },
     "category": { "type": "string" },
     "description": { "type": "text" }
   }

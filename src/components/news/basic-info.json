@@ -2,14 +2,12 @@
   "collectionName": "components_news_basic_infos",
   "info": {
     "displayName": "Основное",
-    "description": "Заголовок, дата, категория, слаг"
+    "description": "Дата, категория"
   },
   "options": {},
   "attributes": {
-    "title": { "type": "string", "required": true },
     "published_at_date": { "type": "date", "required": true },
-    "category": { "type": "enumeration", "enum": ["Главные", "Региональные"] },
-    "slug": { "type": "uid", "targetField": "title" }
+    "category": { "type": "enumeration", "enum": ["Главные", "Региональные"] }
   }
 }
 

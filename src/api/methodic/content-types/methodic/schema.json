@@ -9,7 +9,8 @@
   },
   "options": { "draftAndPublish": true },
   "attributes": {
-    "basic_info": { "type": "component", "repeatable": false, "component": "methodic.basic-info", "required": true },
+    "title": { "type": "string", "required": true },
+    "slug": { "type": "uid", "targetField": "title" },
     "content": { "type": "component", "repeatable": false, "component": "methodic.content" }
   }
 }

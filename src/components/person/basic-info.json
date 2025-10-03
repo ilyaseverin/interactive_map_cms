@@ -3,10 +3,8 @@
   "info": { "displayName": "Основное" },
   "options": {},
   "attributes": {
-    "full_name": { "type": "string", "required": true },
     "position": { "type": "string", "required": true },
-    "order": { "type": "integer", "default": 0 },
-    "slug": { "type": "uid", "targetField": "full_name" }
+    "order": { "type": "integer", "default": 0 }
   }
 }
 

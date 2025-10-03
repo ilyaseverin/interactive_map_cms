@@ -2,14 +2,12 @@
   "collectionName": "components_event_basic_infos",
   "info": {
     "displayName": "Основное",
-    "description": "Название, дата/время, категория, слаг"
+    "description": "Дата/время, категория"
   },
   "options": {},
   "attributes": {
-    "title": { "type": "string", "required": true },
     "datetime_start": { "type": "datetime", "required": true },
-    "category": { "type": "string" },
-    "slug": { "type": "uid", "targetField": "title" }
+    "category": { "type": "string" }
   }
 }
 
