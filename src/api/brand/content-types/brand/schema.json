@@ -1,4 +1,4 @@
-{
+﻿{
   "kind": "singleType",
   "collectionName": "brand",
   "info": {
@@ -9,10 +9,6 @@
   },
   "options": { "draftAndPublish": true },
   "attributes": {
-    "title": { "type": "string", "default": "Фирменный стиль" },
-    "brand_colors": { "type": "json" },
-    "symbols": { "type": "richtext" },
-    "logos": { "type": "media", "allowedTypes": ["images"], "multiple": true },
-    "extra_info": { "type": "richtext" }
+    "content": { "type": "component", "repeatable": false, "component": "brand.content" }
   }
 }

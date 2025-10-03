@@ -1,0 +1,9 @@
+{
+  "collectionName": "components_person_media",
+  "info": { "displayName": "Медиа" },
+  "options": {},
+  "attributes": {
+    "photo": { "type": "media", "multiple": false, "allowedTypes": ["images"] }
+  }
+}
+

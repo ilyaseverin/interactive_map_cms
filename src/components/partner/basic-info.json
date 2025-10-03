@@ -1,0 +1,11 @@
+{
+  "collectionName": "components_partner_basic_infos",
+  "info": { "displayName": "Основное" },
+  "options": {},
+  "attributes": {
+    "name": { "type": "string", "required": true },
+    "url": { "type": "string" },
+    "slug": { "type": "uid", "targetField": "name" }
+  }
+}
+

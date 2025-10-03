@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_press_release_attachments",
+  "info": {
+    "displayName": "Вложения",
+    "description": "Документы"
+  },
+  "options": {},
+  "attributes": {
+    "attachments": { "type": "component", "component": "media.document", "repeatable": true }
+  }
+}
+

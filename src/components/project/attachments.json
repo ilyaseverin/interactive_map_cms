@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_project_attachments",
+  "info": {
+    "displayName": "Документы",
+    "description": "Вложения"
+  },
+  "options": {},
+  "attributes": {
+    "attachments": { "type": "component", "component": "media.document", "repeatable": true }
+  }
+}
+

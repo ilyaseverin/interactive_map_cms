@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_news_meta",
+  "info": {
+    "displayName": "Мета",
+    "description": "Теги и доп. поля"
+  },
+  "options": {},
+  "attributes": {
+    "tags": { "type": "component", "component": "meta.tag", "repeatable": true }
+  }
+}
+

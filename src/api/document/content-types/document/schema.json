@@ -1,4 +1,4 @@
-{
+﻿{
   "kind": "collectionType",
   "collectionName": "documents",
   "info": {
@@ -9,10 +9,7 @@
   },
   "options": { "draftAndPublish": true },
   "attributes": {
-    "title": { "type": "string" },
-    "file": { "type": "media", "allowedTypes": ["files"], "multiple": false },
-    "description": { "type": "text" },
-    "category": { "type": "string" },
-    "slug": { "type": "uid", "targetField": "title", "unique": true }
+    "basic_info": { "type": "component", "repeatable": false, "component": "document.basic-info", "required": true },
+    "file_block": { "type": "component", "repeatable": false, "component": "document.file" }
   }
 }

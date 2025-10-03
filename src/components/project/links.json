@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_project_links",
+  "info": {
+    "displayName": "Ссылки",
+    "description": "Внешние ссылки"
+  },
+  "options": {},
+  "attributes": {
+    "external_links": { "type": "component", "component": "meta.link", "repeatable": true }
+  }
+}
+

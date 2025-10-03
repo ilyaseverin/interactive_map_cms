@@ -1,4 +1,4 @@
-{
+﻿{
   "kind": "collectionType",
   "collectionName": "methodics",
   "info": {
@@ -9,10 +9,7 @@
   },
   "options": { "draftAndPublish": true },
   "attributes": {
-    "title": { "type": "string", "required": true },
-    "content": { "type": "richtext" },
-    "attachments": { "type": "component", "repeatable": true, "component": "media.document" },
-    "links": { "type": "component", "repeatable": true, "component": "meta.link" },
-    "slug": { "type": "uid", "targetField": "title", "unique": true }
+    "basic_info": { "type": "component", "repeatable": false, "component": "methodic.basic-info", "required": true },
+    "content": { "type": "component", "repeatable": false, "component": "methodic.content" }
   }
 }

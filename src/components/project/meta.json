@@ -1,0 +1,12 @@
+﻿{
+  "collectionName": "components_project_meta",
+  "info": {
+    "displayName": "Мета",
+    "description": "Теги и внешний ID"
+  },
+  "options": {},
+  "attributes": {
+    "tags": { "type": "component", "component": "meta.tag", "repeatable": true },
+    "external_id": { "type": "string" }
+  }
+}

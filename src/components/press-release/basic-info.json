@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_press_release_basic_infos",
+  "info": {
+    "displayName": "Основное",
+    "description": "Заголовок, дата, автор, категория, слаг"
+  },
+  "options": {},
+  "attributes": {
+    "title": { "type": "string", "required": true },
+    "published_at_date": { "type": "date", "required": true },
+    "author": { "type": "string" },
+    "category": { "type": "string" },
+    "slug": { "type": "uid", "targetField": "title" }
+  }
+}
+

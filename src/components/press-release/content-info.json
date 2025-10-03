@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_press_release_content_infos",
+  "info": {
+    "displayName": "Контент",
+    "description": "Анонс и текст"
+  },
+  "options": {},
+  "attributes": {
+    "excerpt": { "type": "text" },
+    "content": { "type": "richtext" }
+  }
+}
+

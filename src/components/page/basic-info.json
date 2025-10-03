@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_page_basic_infos",
+  "info": { "displayName": "Основное" },
+  "options": {},
+  "attributes": {
+    "title": { "type": "string", "required": true },
+    "slug": { "type": "uid", "targetField": "title" },
+    "category": { "type": "enumeration", "enum": [
+      "Антимонопольный комплекс",
+      "Антикоррупционная деятельность",
+      "Противодействие терроризму",
+      "Антинаркотическая кампания"
+    ] }
+  }
+}
+

@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_news_content_infos",
+  "info": {
+    "displayName": "Контент",
+    "description": "Анонс и полный текст"
+  },
+  "options": {},
+  "attributes": {
+    "excerpt": { "type": "text" },
+    "content": { "type": "richtext" }
+  }
+}
+

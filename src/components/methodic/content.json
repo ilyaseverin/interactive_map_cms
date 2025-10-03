@@ -1,0 +1,11 @@
+{
+  "collectionName": "components_methodic_content",
+  "info": { "displayName": "Контент" },
+  "options": {},
+  "attributes": {
+    "content": { "type": "richtext" },
+    "attachments": { "type": "component", "component": "media.document", "repeatable": true },
+    "links": { "type": "component", "component": "meta.link", "repeatable": true }
+  }
+}
+

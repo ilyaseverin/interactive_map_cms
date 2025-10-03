@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_project_basic_infos",
+  "info": {
+    "displayName": "Основное",
+    "description": "Заголовок, тип, категория, слаг"
+  },
+  "options": {},
+  "attributes": {
+    "title": { "type": "string", "required": true },
+    "material_type": { "type": "enumeration", "enum": ["новость", "анонс", "объявление", "прочее"] },
+    "category": { "type": "string" },
+    "slug": { "type": "uid", "targetField": "title" }
+  }
+}
+

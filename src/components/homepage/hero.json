@@ -1,0 +1,11 @@
+{
+  "collectionName": "components_homepage_hero",
+  "info": { "displayName": "Хиро" },
+  "options": {},
+  "attributes": {
+    "hero_title": { "type": "string" },
+    "hero_subtitle": { "type": "string" },
+    "hero_image": { "type": "media", "multiple": false, "allowedTypes": ["images"] }
+  }
+}
+

@@ -1,0 +1,9 @@
+{
+  "collectionName": "components_document_file",
+  "info": { "displayName": "Файл" },
+  "options": {},
+  "attributes": {
+    "file": { "type": "media", "multiple": false, "allowedTypes": ["files"] }
+  }
+}
+

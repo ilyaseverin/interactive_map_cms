@@ -1,0 +1,9 @@
+{
+  "collectionName": "components_partner_media",
+  "info": { "displayName": "Медиа" },
+  "options": {},
+  "attributes": {
+    "logo": { "type": "media", "multiple": false, "allowedTypes": ["images"] }
+  }
+}
+

@@ -1,0 +1,10 @@
+{
+  "collectionName": "components_about_content",
+  "info": { "displayName": "Контент" },
+  "options": {},
+  "attributes": {
+    "title": { "type": "string" },
+    "body": { "type": "richtext" }
+  }
+}
+
