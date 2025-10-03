@@ -77,7 +77,7 @@ export interface DocumentFile extends Struct.ComponentSchema {
 export interface EventAdditionalMaterials extends Struct.ComponentSchema {
   collectionName: 'components_event_additional_materials';
   info: {
-    description: '\u0412\u0438\u0434\u0435\u043E \u0438 \u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B \u0434\u043B\u044F \u0441\u043E\u0431\u044B\u0442\u0438\u044F';
+    description: '\u0412\u0438\u0434\u0435\u043E \u0438 \u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B';
     displayName: '\u0414\u043E\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0435 \u043C\u0430\u0442\u0435\u0440\u0438\u0430\u043B\u044B';
   };
   attributes: {
@@ -89,12 +89,12 @@ export interface EventAdditionalMaterials extends Struct.ComponentSchema {
 export interface EventBasicInfo extends Struct.ComponentSchema {
   collectionName: 'components_event_basic_infos';
   info: {
-    description: '\u0411\u0430\u0437\u043E\u0432\u0430\u044F \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044F \u043E \u0441\u043E\u0431\u044B\u0442\u0438\u0438';
-    displayName: '\u041E\u0441\u043D\u043E\u0432\u043D\u0430\u044F \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044F';
+    description: '\u041D\u0430\u0437\u0432\u0430\u043D\u0438\u0435, \u0434\u0430\u0442\u0430/\u0432\u0440\u0435\u043C\u044F, \u043A\u0430\u0442\u0435\u0433\u043E\u0440\u0438\u044F, \u0441\u043B\u0430\u0433';
+    displayName: '\u041E\u0441\u043D\u043E\u0432\u043D\u043E\u0435';
   };
   attributes: {
+    category: Schema.Attribute.String;
     datetime_start: Schema.Attribute.DateTime & Schema.Attribute.Required;
-    event_type: Schema.Attribute.String;
     slug: Schema.Attribute.UID<'title'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
@@ -103,8 +103,8 @@ export interface EventBasicInfo extends Struct.ComponentSchema {
 export interface EventContentInfo extends Struct.ComponentSchema {
   collectionName: 'components_event_content_infos';
   info: {
-    description: '\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0438 \u043C\u0435\u0434\u0438\u0430-\u043A\u043E\u043D\u0442\u0435\u043D\u0442 \u0441\u043E\u0431\u044B\u0442\u0438\u044F';
-    displayName: '\u041A\u043E\u043D\u0442\u0435\u043D\u0442 \u0441\u043E\u0431\u044B\u0442\u0438\u044F';
+    description: '\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0438 \u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F';
+    displayName: '\u041A\u043E\u043D\u0442\u0435\u043D\u0442';
   };
   attributes: {
     cover: Schema.Attribute.Media<'images'>;
@@ -116,8 +116,8 @@ export interface EventContentInfo extends Struct.ComponentSchema {
 export interface EventLocationInfo extends Struct.ComponentSchema {
   collectionName: 'components_event_location_infos';
   info: {
-    description: '\u0418\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044F \u043E \u043C\u0435\u0441\u0442\u0435 \u043F\u0440\u043E\u0432\u0435\u0434\u0435\u043D\u0438\u044F \u0441\u043E\u0431\u044B\u0442\u0438\u044F';
-    displayName: '\u041C\u0435\u0441\u0442\u043E\u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u0435';
+    description: '\u0410\u0434\u0440\u0435\u0441 \u0438 \u0442\u043E\u0447\u043A\u0430 \u043D\u0430 \u043A\u0430\u0440\u0442\u0435';
+    displayName: '\u041C\u0435\u0441\u0442\u043E \u043F\u0440\u043E\u0432\u0435\u0434\u0435\u043D\u0438\u044F';
   };
   attributes: {
     location: Schema.Attribute.String;

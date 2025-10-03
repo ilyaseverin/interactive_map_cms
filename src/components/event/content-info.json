@@ -1,28 +1,14 @@
 {
   "collectionName": "components_event_content_infos",
   "info": {
-    "displayName": "Контент события",
-    "description": "Описание и медиа-контент события"
+    "displayName": "Контент",
+    "description": "Описание и изображения"
   },
   "options": {},
   "attributes": {
-    "description": {
-      "type": "richtext",
-      "required": true
-    },
-    "cover": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
-    "gallery": {
-      "type": "media",
-      "multiple": true,
-      "allowedTypes": [
-        "images"
-      ]
-    }
+    "description": { "type": "richtext", "required": true },
+    "cover": { "type": "media", "multiple": false, "allowedTypes": ["images"] },
+    "gallery": { "type": "media", "multiple": true, "allowedTypes": ["images"] }
   }
 }
+

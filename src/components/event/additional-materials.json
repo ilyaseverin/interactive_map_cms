@@ -2,19 +2,12 @@
   "collectionName": "components_event_additional_materials",
   "info": {
     "displayName": "Дополнительные материалы",
-    "description": "Видео и документы для события"
+    "description": "Видео и документы"
   },
   "options": {},
   "attributes": {
-    "videos": {
-      "type": "component",
-      "component": "media.video-link",
-      "repeatable": true
-    },
-    "attachments": {
-      "type": "component",
-      "component": "media.document",
-      "repeatable": true
-    }
+    "videos": { "type": "component", "component": "media.video-link", "repeatable": true },
+    "attachments": { "type": "component", "component": "media.document", "repeatable": true }
   }
 }
+

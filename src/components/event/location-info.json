@@ -1,20 +1,17 @@
 {
   "collectionName": "components_event_location_infos",
   "info": {
-    "displayName": "Местоположение",
-    "description": "Информация о месте проведения события"
+    "displayName": "Место проведения",
+    "description": "Адрес и точка на карте"
   },
   "options": {},
   "attributes": {
-    "location": {
-      "type": "string"
-    },
+    "location": { "type": "string" },
     "location_map_link": {
       "type": "customField",
       "customField": "plugin::strapi-location-picker.location-picker",
-      "options": {
-        "info": true
-      }
+      "options": { "info": true }
     }
   }
 }
+

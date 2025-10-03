@@ -1,25 +1,15 @@
 {
   "collectionName": "components_event_basic_infos",
   "info": {
-    "displayName": "Основная информация",
-    "description": "Базовая информация о событии"
+    "displayName": "Основное",
+    "description": "Название, дата/время, категория, слаг"
   },
   "options": {},
   "attributes": {
-    "title": {
-      "type": "string",
-      "required": true
-    },
-    "datetime_start": {
-      "type": "datetime",
-      "required": true
-    },
-    "event_type": {
-      "type": "string"
-    },
-    "slug": {
-      "type": "uid",
-      "targetField": "title"
-    }
+    "title": { "type": "string", "required": true },
+    "datetime_start": { "type": "datetime", "required": true },
+    "category": { "type": "string" },
+    "slug": { "type": "uid", "targetField": "title" }
   }
 }
+

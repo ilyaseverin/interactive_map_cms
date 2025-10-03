@@ -7,32 +7,12 @@
     "displayName": "Календарь событий / события",
     "description": "Календарь событий"
   },
-  "options": {
-    "draftAndPublish": true
-  },
-  "pluginOptions": {},
+  "options": { "draftAndPublish": true },
   "attributes": {
-    "basic_info": {
-      "type": "component",
-      "repeatable": false,
-      "component": "event.basic-info",
-      "required": true
-    },
-    "location_info": {
-      "type": "component",
-      "repeatable": false,
-      "component": "event.location-info"
-    },
-    "content_info": {
-      "type": "component",
-      "repeatable": false,
-      "component": "event.content-info",
-      "required": true
-    },
-    "additional_materials": {
-      "type": "component",
-      "repeatable": false,
-      "component": "event.additional-materials"
-    }
+    "basic_info": { "type": "component", "repeatable": false, "component": "event.basic-info", "required": true },
+    "location_info": { "type": "component", "repeatable": false, "component": "event.location-info" },
+    "content_info": { "type": "component", "repeatable": false, "component": "event.content-info", "required": true },
+    "additional_materials": { "type": "component", "repeatable": false, "component": "event.additional-materials" }
   }
 }
+
