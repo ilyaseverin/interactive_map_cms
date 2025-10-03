@@ -1,4 +1,4 @@
-{
+﻿{
   "kind": "collectionType",
   "collectionName": "pages",
   "info": {
@@ -10,18 +10,13 @@
   "options": { "draftAndPublish": true },
   "attributes": {
     "title": { "type": "string", "required": true },
-    "slug": { "type": "uid", "targetField": "title", "unique": true },
-    "body": { "type": "richtext" },
-    "attachments": { "type": "component", "repeatable": true, "component": "media.document" },
-    "links": { "type": "component", "repeatable": true, "component": "meta.link" },
-    "category": {
-      "type": "enumeration",
-      "enum": [
-        "Антимонопольный комплекс",
-        "Антикоррупционная деятельность",
-        "Противодействие терроризму",
-        "Антинаркотическая кампания"
-      ]
-    }
+    "slug": { "type": "uid", "targetField": "title" },
+    "category": { "type": "enumeration", "enum": [
+      "Антимонопольный комплекс",
+      "Антикоррупционная деятельность",
+      "Противодействие терроризму",
+      "Антинаркотическая кампания"
+    ] },
+    "content": { "type": "component", "repeatable": false, "component": "page.content" }
   }
 }

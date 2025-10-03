@@ -7,63 +7,14 @@
     "displayName": "Календарь событий / события",
     "description": "Календарь событий"
   },
-  "options": {
-    "draftAndPublish": true
-  },
-  "pluginOptions": {},
+  "options": { "draftAndPublish": true },
   "attributes": {
-    "title": {
-      "type": "string",
-      "required": true
-    },
-    "datetime_start": {
-      "type": "datetime",
-      "required": true
-    },
-    "location": {
-      "type": "string"
-    },
-    "location_map_link": {
-      "type": "customField",
-      "customField": "plugin::strapi-location-picker.location-picker",
-      "options": {
-        "info": true
-      }
-    },
-    "event_type": {
-      "type": "string"
-    },
-    "description": {
-      "type": "richtext",
-      "required": true
-    },
-    "cover": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
-    "gallery": {
-      "type": "media",
-      "multiple": true,
-      "allowedTypes": [
-        "images"
-      ]
-    },
-    "videos": {
-      "type": "component",
-      "component": "media.video-link",
-      "repeatable": true
-    },
-    "attachments": {
-      "type": "component",
-      "component": "media.document",
-      "repeatable": true
-    },
-    "slug": {
-      "type": "uid",
-      "targetField": "title"
-    }
+    "title": { "type": "string", "required": true },
+    "slug": { "type": "uid", "targetField": "title" },
+    "basic_info": { "type": "component", "repeatable": false, "component": "event.basic-info", "required": true },
+    "location_info": { "type": "component", "repeatable": false, "component": "event.location-info" },
+    "content_info": { "type": "component", "repeatable": false, "component": "event.content-info", "required": true },
+    "additional_materials": { "type": "component", "repeatable": false, "component": "event.additional-materials" }
   }
 }
+

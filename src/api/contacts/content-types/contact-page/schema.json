@@ -1,4 +1,4 @@
-{
+﻿{
   "kind": "singleType",
   "collectionName": "contact_pages",
   "info": {
@@ -9,10 +9,6 @@
   },
   "options": { "draftAndPublish": true },
   "attributes": {
-    "address": { "type": "string", "required": true },
-    "phones": { "type": "component", "repeatable": true, "component": "contacts.phone" },
-    "website": { "type": "string" },
-    "email": { "type": "email" },
-    "map_embed": { "type": "text" }
+    "main": { "type": "component", "repeatable": false, "component": "contacts.main", "required": true }
   }
 }

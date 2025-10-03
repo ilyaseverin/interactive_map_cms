@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_contacts_main",
+  "info": { "displayName": "Основное" },
+  "options": {},
+  "attributes": {
+    "address": { "type": "string" },
+    "website": { "type": "string" },
+    "email": { "type": "email" },
+    "map_embed": { "type": "text" },
+    "phones": { "type": "component", "component": "contacts.phone", "repeatable": true }
+  }
+}
+

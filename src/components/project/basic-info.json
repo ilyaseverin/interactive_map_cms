@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_project_basic_infos",
+  "info": {
+    "displayName": "Основное",
+    "description": "Тип, категория"
+  },
+  "options": {},
+  "attributes": {
+    "material_type": { "type": "enumeration", "enum": ["новость", "анонс", "объявление", "прочее"] },
+    "category": { "type": "string" }
+  }
+}
+

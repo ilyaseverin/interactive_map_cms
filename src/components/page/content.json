@@ -1,0 +1,11 @@
+{
+  "collectionName": "components_page_content",
+  "info": { "displayName": "Контент" },
+  "options": {},
+  "attributes": {
+    "body": { "type": "richtext" },
+    "attachments": { "type": "component", "component": "media.document", "repeatable": true },
+    "links": { "type": "component", "component": "meta.link", "repeatable": true }
+  }
+}
+

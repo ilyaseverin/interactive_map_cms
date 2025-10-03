@@ -1,4 +1,4 @@
-{
+﻿{
   "kind": "singleType",
   "collectionName": "about",
   "info": {
@@ -9,7 +9,6 @@
   },
   "options": { "draftAndPublish": true },
   "attributes": {
-    "title": { "type": "string", "default": "Об учреждении" },
-    "body": { "type": "richtext" }
+    "content": { "type": "component", "repeatable": false, "component": "about.content" }
   }
 }

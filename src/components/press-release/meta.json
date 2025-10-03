@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_press_release_meta",
+  "info": {
+    "displayName": "Мета",
+    "description": "Ключевые слова"
+  },
+  "options": {},
+  "attributes": {
+    "keywords": { "type": "component", "component": "meta.tag", "repeatable": true }
+  }
+}
+

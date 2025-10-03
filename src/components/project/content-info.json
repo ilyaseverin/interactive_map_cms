@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_project_content_infos",
+  "info": {
+    "displayName": "Контент",
+    "description": "Полное описание"
+  },
+  "options": {},
+  "attributes": {
+    "content": { "type": "richtext" }
+  }
+}
+

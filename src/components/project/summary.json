@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_project_summary",
+  "info": {
+    "displayName": "Аннотация",
+    "description": "Краткое описание"
+  },
+  "options": {},
+  "attributes": {
+    "excerpt": { "type": "text" }
+  }
+}
+

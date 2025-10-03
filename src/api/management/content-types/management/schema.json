@@ -1,4 +1,4 @@
-{
+﻿{
   "kind": "collectionType",
   "collectionName": "management",
   "info": {
@@ -10,10 +10,9 @@
   "options": { "draftAndPublish": true },
   "attributes": {
     "full_name": { "type": "string", "required": true },
-    "position": { "type": "string", "required": true },
-    "photo": { "type": "media", "allowedTypes": ["images"], "multiple": false },
-    "bio": { "type": "text" },
-    "order": { "type": "integer", "default": 0 },
-    "slug": { "type": "uid", "targetField": "full_name", "unique": true }
+    "slug": { "type": "uid", "targetField": "full_name" },
+    "photo": { "type": "media", "multiple": false, "allowedTypes": ["images"] },
+    "basic_info": { "type": "component", "repeatable": false, "component": "person.basic-info", "required": true },
+    "bio": { "type": "text" }
   }
 }

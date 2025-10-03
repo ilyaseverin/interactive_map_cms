@@ -1,0 +1,10 @@
+{
+  "collectionName": "components_document_basic_infos",
+  "info": { "displayName": "Основное" },
+  "options": {},
+  "attributes": {
+    "category": { "type": "string" },
+    "description": { "type": "text" }
+  }
+}
+

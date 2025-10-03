@@ -9,9 +9,7 @@
   },
   "options": { "draftAndPublish": true },
   "attributes": {
-    "shortcuts": { "type": "component", "repeatable": true, "component": "ui.shortcut" },
-    "hero_title": { "type": "string" },
-    "hero_subtitle": { "type": "string" },
-    "hero_image": { "type": "media", "allowedTypes": ["images"], "multiple": false }
+    "hero": { "type": "component", "repeatable": false, "component": "homepage.hero" },
+    "shortcuts": { "type": "component", "repeatable": true, "component": "ui.shortcut" }
   }
 }

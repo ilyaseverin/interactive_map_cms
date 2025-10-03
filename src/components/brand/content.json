@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_brand_content",
+  "info": { "displayName": "Содержание" },
+  "options": {},
+  "attributes": {
+    "title": { "type": "string" },
+    "brand_colors": { "type": "json" },
+    "symbols": { "type": "richtext" },
+    "logos": { "type": "media", "multiple": true, "allowedTypes": ["images"] },
+    "extra_info": { "type": "richtext" }
+  }
+}
+

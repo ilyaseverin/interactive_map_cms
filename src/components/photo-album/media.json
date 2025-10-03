@@ -1,0 +1,10 @@
+{
+  "collectionName": "components_photo_album_media",
+  "info": { "displayName": "Медиа" },
+  "options": {},
+  "attributes": {
+    "cover": { "type": "media", "multiple": false, "allowedTypes": ["images"] },
+    "photos": { "type": "media", "multiple": true, "allowedTypes": ["images"] }
+  }
+}
+

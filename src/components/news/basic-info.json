@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_news_basic_infos",
+  "info": {
+    "displayName": "Основное",
+    "description": "Дата, категория"
+  },
+  "options": {},
+  "attributes": {
+    "published_at_date": { "type": "date", "required": true },
+    "category": { "type": "enumeration", "enum": ["Главные", "Региональные"] }
+  }
+}
+

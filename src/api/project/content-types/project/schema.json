@@ -1,4 +1,4 @@
-{
+﻿{
   "kind": "collectionType",
   "collectionName": "projects",
   "info": {
@@ -9,18 +9,14 @@
   },
   "options": { "draftAndPublish": true },
   "attributes": {
-    "external_id": { "type": "string" },
     "title": { "type": "string", "required": true },
-    "excerpt": { "type": "text" },
-    "content": { "type": "richtext" },
-    "material_type": { "type": "enumeration", "enum": ["новость", "анонс", "объявление", "прочее"] },
-    "category": { "type": "string" },
-    "cover": { "type": "media", "allowedTypes": ["images"], "multiple": false },
-    "gallery": { "type": "media", "allowedTypes": ["images"], "multiple": true },
-    "videos": { "type": "component", "repeatable": true, "component": "media.video-link" },
-    "attachments": { "type": "component", "repeatable": true, "component": "media.document" },
-    "external_links": { "type": "component", "repeatable": true, "component": "meta.link" },
-    "tags": { "type": "component", "repeatable": true, "component": "meta.tag" },
-    "slug": { "type": "uid", "targetField": "title", "unique": true }
+    "slug": { "type": "uid", "targetField": "title" },
+    "basic_info": { "type": "component", "repeatable": false, "component": "project.basic-info", "required": true },
+    "summary": { "type": "component", "repeatable": false, "component": "project.summary" },
+    "content_info": { "type": "component", "repeatable": false, "component": "project.content-info" },
+    "media": { "type": "component", "repeatable": false, "component": "project.media" },
+    "attachments_block": { "type": "component", "repeatable": false, "component": "project.attachments" },
+    "links": { "type": "component", "repeatable": false, "component": "project.links" },
+    "meta_info": { "type": "component", "repeatable": false, "component": "project.meta" }
   }
 }

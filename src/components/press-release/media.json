@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_press_release_media",
+  "info": {
+    "displayName": "Медиа",
+    "description": "Обложка и галерея"
+  },
+  "options": {},
+  "attributes": {
+    "cover": { "type": "media", "multiple": false, "allowedTypes": ["images"] },
+    "gallery": { "type": "media", "multiple": true, "allowedTypes": ["images"] }
+  }
+}
+

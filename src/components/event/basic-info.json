@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_event_basic_infos",
+  "info": {
+    "displayName": "Основное",
+    "description": "Дата/время, категория"
+  },
+  "options": {},
+  "attributes": {
+    "datetime_start": { "type": "datetime", "required": true },
+    "category": { "type": "string" }
+  }
+}
+

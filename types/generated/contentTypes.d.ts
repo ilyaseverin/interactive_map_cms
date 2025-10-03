@@ -385,7 +385,7 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    body: Schema.Attribute.RichText;
+    content: Schema.Attribute.Component<'about.content', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -393,8 +393,6 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::about.about'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'\u041E\u0431 \u0443\u0447\u0440\u0435\u0436\u0434\u0435\u043D\u0438\u0438'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -413,19 +411,14 @@ export interface ApiBrandBrand extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    brand_colors: Schema.Attribute.JSON;
+    content: Schema.Attribute.Component<'brand.content', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    extra_info: Schema.Attribute.RichText;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::brand.brand'> &
       Schema.Attribute.Private;
-    logos: Schema.Attribute.Media<'images', true>;
     publishedAt: Schema.Attribute.DateTime;
-    symbols: Schema.Attribute.RichText;
-    title: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'\u0424\u0438\u0440\u043C\u0435\u043D\u043D\u044B\u0439 \u0441\u0442\u0438\u043B\u044C'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -444,24 +437,21 @@ export interface ApiContactsContactPage extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    address: Schema.Attribute.String & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    email: Schema.Attribute.Email;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::contacts.contact-page'
     > &
       Schema.Attribute.Private;
-    map_embed: Schema.Attribute.Text;
-    phones: Schema.Attribute.Component<'contacts.phone', true>;
+    main: Schema.Attribute.Component<'contacts.main', false> &
+      Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    website: Schema.Attribute.String;
   };
 }
 
@@ -477,11 +467,11 @@ export interface ApiDocumentDocument extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    category: Schema.Attribute.String;
+    basic_info: Schema.Attribute.Component<'document.basic-info', false> &
+      Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
     file: Schema.Attribute.Media<'files'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -490,7 +480,7 @@ export interface ApiDocumentDocument extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Unique;
+    slug: Schema.Attribute.UID<'title'>;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -510,33 +500,27 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    attachments: Schema.Attribute.Component<'media.document', true>;
-    cover: Schema.Attribute.Media<'images'>;
+    additional_materials: Schema.Attribute.Component<
+      'event.additional-materials',
+      false
+    >;
+    basic_info: Schema.Attribute.Component<'event.basic-info', false> &
+      Schema.Attribute.Required;
+    content_info: Schema.Attribute.Component<'event.content-info', false> &
+      Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    datetime_start: Schema.Attribute.DateTime & Schema.Attribute.Required;
-    description: Schema.Attribute.RichText & Schema.Attribute.Required;
-    event_type: Schema.Attribute.String;
-    gallery: Schema.Attribute.Media<'images', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::event.event'> &
       Schema.Attribute.Private;
-    location: Schema.Attribute.String;
-    location_map_link: Schema.Attribute.JSON &
-      Schema.Attribute.CustomField<
-        'plugin::strapi-location-picker.location-picker',
-        {
-          info: true;
-        }
-      >;
+    location_info: Schema.Attribute.Component<'event.location-info', false>;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'title'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    videos: Schema.Attribute.Component<'media.video-link', true>;
   };
 }
 
@@ -555,9 +539,7 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    hero_image: Schema.Attribute.Media<'images'>;
-    hero_subtitle: Schema.Attribute.String;
-    hero_title: Schema.Attribute.String;
+    hero: Schema.Attribute.Component<'homepage.hero', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -584,6 +566,8 @@ export interface ApiManagementManagement extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    basic_info: Schema.Attribute.Component<'person.basic-info', false> &
+      Schema.Attribute.Required;
     bio: Schema.Attribute.Text;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -595,11 +579,9 @@ export interface ApiManagementManagement extends Struct.CollectionTypeSchema {
       'api::management.management'
     > &
       Schema.Attribute.Private;
-    order: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
     photo: Schema.Attribute.Media<'images'>;
-    position: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID<'full_name'> & Schema.Attribute.Unique;
+    slug: Schema.Attribute.UID<'full_name'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -618,12 +600,10 @@ export interface ApiMethodicMethodic extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    attachments: Schema.Attribute.Component<'media.document', true>;
-    content: Schema.Attribute.RichText;
+    content: Schema.Attribute.Component<'methodic.content', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    links: Schema.Attribute.Component<'meta.link', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -631,7 +611,7 @@ export interface ApiMethodicMethodic extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Unique;
+    slug: Schema.Attribute.UID<'title'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -651,34 +631,26 @@ export interface ApiNewsNewsItem extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    category: Schema.Attribute.Enumeration<
-      [
-        '\u0413\u043B\u0430\u0432\u043D\u044B\u0435',
-        '\u0420\u0435\u0433\u0438\u043E\u043D\u0430\u043B\u044C\u043D\u044B\u0435',
-      ]
-    >;
-    content: Schema.Attribute.RichText;
-    cover: Schema.Attribute.Media<'images'>;
+    basic_info: Schema.Attribute.Component<'news.basic-info', false> &
+      Schema.Attribute.Required;
+    content_info: Schema.Attribute.Component<'news.content-info', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    excerpt: Schema.Attribute.Text;
-    gallery: Schema.Attribute.Media<'images', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::news.news-item'
     > &
       Schema.Attribute.Private;
-    published_at_date: Schema.Attribute.Date & Schema.Attribute.Required;
+    media: Schema.Attribute.Component<'news.media', false>;
+    meta_info: Schema.Attribute.Component<'news.meta', false>;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Unique;
-    tags: Schema.Attribute.Component<'meta.tag', true>;
+    slug: Schema.Attribute.UID<'title'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    video_links: Schema.Attribute.Component<'media.video-link', true>;
   };
 }
 
@@ -694,8 +666,6 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    attachments: Schema.Attribute.Component<'media.document', true>;
-    body: Schema.Attribute.RichText;
     category: Schema.Attribute.Enumeration<
       [
         '\u0410\u043D\u0442\u0438\u043C\u043E\u043D\u043E\u043F\u043E\u043B\u044C\u043D\u044B\u0439 \u043A\u043E\u043C\u043F\u043B\u0435\u043A\u0441',
@@ -704,15 +674,15 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         '\u0410\u043D\u0442\u0438\u043D\u0430\u0440\u043A\u043E\u0442\u0438\u0447\u0435\u0441\u043A\u0430\u044F \u043A\u0430\u043C\u043F\u0430\u043D\u0438\u044F',
       ]
     >;
+    content: Schema.Attribute.Component<'page.content', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    links: Schema.Attribute.Component<'meta.link', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::page.page'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Unique;
+    slug: Schema.Attribute.UID<'title'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -744,7 +714,7 @@ export interface ApiPartnerPartner extends Struct.CollectionTypeSchema {
     logo: Schema.Attribute.Media<'images'>;
     name: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Unique;
+    slug: Schema.Attribute.UID<'name'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -764,7 +734,6 @@ export interface ApiPhotoAlbumPhotoAlbum extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    cover: Schema.Attribute.Media<'images'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -775,9 +744,9 @@ export interface ApiPhotoAlbumPhotoAlbum extends Struct.CollectionTypeSchema {
       'api::photo-album.photo-album'
     > &
       Schema.Attribute.Private;
-    photos: Schema.Attribute.Media<'images', true>;
+    media: Schema.Attribute.Component<'photo-album.media', false>;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Unique;
+    slug: Schema.Attribute.UID<'title'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -798,26 +767,29 @@ export interface ApiPressReleasePressRelease
     draftAndPublish: true;
   };
   attributes: {
-    attachments: Schema.Attribute.Component<'media.document', true>;
-    author: Schema.Attribute.String;
-    category: Schema.Attribute.String;
-    content: Schema.Attribute.RichText;
-    cover: Schema.Attribute.Media<'images'>;
+    attachments_block: Schema.Attribute.Component<
+      'press-release.attachments',
+      false
+    >;
+    basic_info: Schema.Attribute.Component<'press-release.basic-info', false> &
+      Schema.Attribute.Required;
+    content_info: Schema.Attribute.Component<
+      'press-release.content-info',
+      false
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    excerpt: Schema.Attribute.Text;
-    gallery: Schema.Attribute.Media<'images', true>;
-    keywords: Schema.Attribute.Component<'meta.tag', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::press-release.press-release'
     > &
       Schema.Attribute.Private;
-    published_at_date: Schema.Attribute.Date & Schema.Attribute.Required;
+    media: Schema.Attribute.Component<'press-release.media', false>;
+    meta_info: Schema.Attribute.Component<'press-release.meta', false>;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Unique;
+    slug: Schema.Attribute.UID<'title'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -837,39 +809,29 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    attachments: Schema.Attribute.Component<'media.document', true>;
-    category: Schema.Attribute.String;
-    content: Schema.Attribute.RichText;
-    cover: Schema.Attribute.Media<'images'>;
+    attachments_block: Schema.Attribute.Component<'project.attachments', false>;
+    basic_info: Schema.Attribute.Component<'project.basic-info', false> &
+      Schema.Attribute.Required;
+    content_info: Schema.Attribute.Component<'project.content-info', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    excerpt: Schema.Attribute.Text;
-    external_id: Schema.Attribute.String;
-    external_links: Schema.Attribute.Component<'meta.link', true>;
-    gallery: Schema.Attribute.Media<'images', true>;
+    links: Schema.Attribute.Component<'project.links', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::project.project'
     > &
       Schema.Attribute.Private;
-    material_type: Schema.Attribute.Enumeration<
-      [
-        '\u043D\u043E\u0432\u043E\u0441\u0442\u044C',
-        '\u0430\u043D\u043E\u043D\u0441',
-        '\u043E\u0431\u044A\u044F\u0432\u043B\u0435\u043D\u0438\u0435',
-        '\u043F\u0440\u043E\u0447\u0435\u0435',
-      ]
-    >;
+    media: Schema.Attribute.Component<'project.media', false>;
+    meta_info: Schema.Attribute.Component<'project.meta', false>;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Unique;
-    tags: Schema.Attribute.Component<'meta.tag', true>;
+    slug: Schema.Attribute.UID<'title'>;
+    summary: Schema.Attribute.Component<'project.summary', false>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    videos: Schema.Attribute.Component<'media.video-link', true>;
   };
 }
 
@@ -885,6 +847,8 @@ export interface ApiTeamMemberTeamMember extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    basic_info: Schema.Attribute.Component<'person.basic-info', false> &
+      Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -895,11 +859,9 @@ export interface ApiTeamMemberTeamMember extends Struct.CollectionTypeSchema {
       'api::team-member.team-member'
     > &
       Schema.Attribute.Private;
-    order: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
     photo: Schema.Attribute.Media<'images'>;
-    position: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID<'full_name'> & Schema.Attribute.Unique;
+    slug: Schema.Attribute.UID<'full_name'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
