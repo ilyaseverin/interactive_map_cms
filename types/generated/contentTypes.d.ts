@@ -399,6 +399,98 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiBattleGloryHistoryBattleGloryHistory
+  extends Struct.SingleTypeSchema {
+  collectionName: 'battle_glory_history';
+  info: {
+    description: '\u0418\u0441\u0442\u043E\u0440\u0438\u044F \u041B\u0438\u043F\u0435\u0446\u043A\u043E\u0439 \u043E\u0431\u043B\u0430\u0441\u0442\u0438 \u0432 \u0433\u043E\u0434\u044B \u0412\u041E\u0412';
+    displayName: '\u041A\u0430\u0440\u0442\u0430 \u0411\u043E\u0435\u0432\u043E\u0439 \u0421\u043B\u0430\u0432\u044B - \u0418\u0441\u0442\u043E\u0440\u0438\u044F';
+    pluralName: 'battle-glory-histories';
+    singularName: 'battle-glory-history';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Schema.Attribute.RichText;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.RichText;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::battle-glory-history.battle-glory-history'
+    > &
+      Schema.Attribute.Private;
+    municipalities_stats: Schema.Attribute.JSON;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'\u0418\u0441\u0442\u043E\u0440\u0438\u044F \u041B\u0438\u043F\u0435\u0446\u043A\u043E\u0439 \u043E\u0431\u043B\u0430\u0441\u0442\u0438 \u0432 \u0433\u043E\u0434\u044B \u0412\u0435\u043B\u0438\u043A\u043E\u0439 \u041E\u0442\u0435\u0447\u0435\u0441\u0442\u0432\u0435\u043D\u043D\u043E\u0439 \u0432\u043E\u0439\u043D\u044B'>;
+    total_departed: Schema.Attribute.Integer;
+    total_fallen: Schema.Attribute.Integer;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiBattleGloryPointBattleGloryPoint
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'battle_glory_points';
+  info: {
+    description: '\u041F\u0430\u043C\u044F\u0442\u043D\u0438\u043A\u0438, \u043C\u0435\u043C\u043E\u0440\u0438\u0430\u043B\u044B, \u043C\u0435\u043C\u043E\u0440\u0438\u0430\u043B\u044C\u043D\u044B\u0435 \u0434\u043E\u0441\u043A\u0438 \u0438 \u0432\u043E\u0438\u043D\u0441\u043A\u0438\u0435 \u0437\u0430\u0445\u043E\u0440\u043E\u043D\u0435\u043D\u0438\u044F';
+    displayName: '\u041A\u0430\u0440\u0442\u0430 \u0411\u043E\u0435\u0432\u043E\u0439 \u0421\u043B\u0430\u0432\u044B - \u0422\u043E\u0447\u043A\u0438';
+    pluralName: 'battle-glory-points';
+    singularName: 'battle-glory-point';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    address: Schema.Attribute.String;
+    coordinates: Schema.Attribute.JSON &
+      Schema.Attribute.CustomField<
+        'plugin::strapi-location-picker.location-picker',
+        {
+          info: true;
+        }
+      >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.RichText & Schema.Attribute.Required;
+    formatted_address: Schema.Attribute.Text;
+    geocoding_status: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::battle-glory-point.battle-glory-point'
+    > &
+      Schema.Attribute.Private;
+    municipality: Schema.Attribute.String & Schema.Attribute.Required;
+    object_name: Schema.Attribute.String;
+    original_number: Schema.Attribute.String;
+    point_type: Schema.Attribute.Enumeration<
+      [
+        '\u043F\u0430\u043C\u044F\u0442\u043D\u0438\u043A/\u043C\u0435\u043C\u043E\u0440\u0438\u0430\u043B',
+        '\u043C\u0435\u043C\u043E\u0440\u0438\u0430\u043B\u044C\u043D\u0430\u044F \u0434\u043E\u0441\u043A\u0430',
+        '\u0432\u043E\u0438\u043D\u0441\u043A\u043E\u0435 \u0437\u0430\u0445\u043E\u0440\u043E\u043D\u0435\u043D\u0438\u0435',
+      ]
+    > &
+      Schema.Attribute.Required;
+    preview_image: Schema.Attribute.Media<'images'>;
+    publishedAt: Schema.Attribute.DateTime;
+    region: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    video: Schema.Attribute.Media<'videos'>;
+  };
+}
+
 export interface ApiBrandBrand extends Struct.SingleTypeSchema {
   collectionName: 'brand';
   info: {
@@ -1378,6 +1470,8 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::about.about': ApiAboutAbout;
+      'api::battle-glory-history.battle-glory-history': ApiBattleGloryHistoryBattleGloryHistory;
+      'api::battle-glory-point.battle-glory-point': ApiBattleGloryPointBattleGloryPoint;
       'api::brand.brand': ApiBrandBrand;
       'api::contacts.contact-page': ApiContactsContactPage;
       'api::document.document': ApiDocumentDocument;

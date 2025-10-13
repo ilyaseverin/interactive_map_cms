@@ -1,0 +1,9 @@
+/**
+ * battle-glory-point router
+ */
+
+import { factories } from "@strapi/strapi";
+
+export default factories.createCoreRouter(
+  "api::battle-glory-point.battle-glory-point"
+);
