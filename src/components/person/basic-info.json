@@ -4,7 +4,9 @@
   "options": {},
   "attributes": {
     "position": { "type": "string", "required": true },
-    "order": { "type": "integer", "default": 0 }
+    "order": { "type": "integer", "default": 0 },
+    "phone": { "type": "string" },
+    "email": { "type": "email" }
   }
 }
 

@@ -264,7 +264,9 @@ export interface PersonBasicInfo extends Struct.ComponentSchema {
     displayName: '\u041E\u0441\u043D\u043E\u0432\u043D\u043E\u0435';
   };
   attributes: {
+    email: Schema.Attribute.Email;
     order: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
+    phone: Schema.Attribute.String;
     position: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
