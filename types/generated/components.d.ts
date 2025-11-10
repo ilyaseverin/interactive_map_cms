@@ -83,6 +83,14 @@ export interface EventBasicInfo extends Struct.ComponentSchema {
   attributes: {
     category: Schema.Attribute.String;
     datetime_start: Schema.Attribute.DateTime & Schema.Attribute.Required;
+    event_type: Schema.Attribute.Enumeration<
+      [
+        '\u0427\u0435\u043B\u043E\u0432\u0435\u043A \u0434\u043D\u044F',
+        '\u0421\u043E\u0431\u044B\u0442\u0438\u0435 \u0434\u043D\u044F',
+        '\u0422\u0435\u043C\u0430 \u0434\u043D\u044F',
+        '\u0424\u0438\u043B\u044C\u043C \u0434\u043D\u044F',
+      ]
+    >;
   };
 }
 
