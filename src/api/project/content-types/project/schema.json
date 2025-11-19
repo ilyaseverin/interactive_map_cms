@@ -17,6 +17,6 @@
     "media": { "type": "component", "repeatable": false, "component": "project.media" },
     "attachments_block": { "type": "component", "repeatable": false, "component": "project.attachments" },
     "links": { "type": "component", "repeatable": false, "component": "project.links" },
-    "meta_info": { "type": "component", "repeatable": false, "component": "project.meta" }
+    "seo": { "type": "component", "repeatable": false, "component": "shared.seo" }
   }
 }

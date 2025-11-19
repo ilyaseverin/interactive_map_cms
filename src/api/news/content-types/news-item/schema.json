@@ -14,7 +14,6 @@
     "basic_info": { "type": "component", "repeatable": false, "component": "news.basic-info", "required": true },
     "content_info": { "type": "component", "repeatable": false, "component": "news.content-info" },
     "media": { "type": "component", "repeatable": false, "component": "news.media" },
-    "meta_info": { "type": "component", "repeatable": false, "component": "news.meta" }
+    "seo": { "type": "component", "repeatable": false, "component": "shared.seo" }
   }
 }
-

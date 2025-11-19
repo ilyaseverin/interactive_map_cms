@@ -608,6 +608,7 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     location_info: Schema.Attribute.Component<'event.location-info', false>;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     slug: Schema.Attribute.UID<'title'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
@@ -736,8 +737,8 @@ export interface ApiNewsNewsItem extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     media: Schema.Attribute.Component<'news.media', false>;
-    meta_info: Schema.Attribute.Component<'news.meta', false>;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     slug: Schema.Attribute.UID<'title'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
@@ -879,8 +880,8 @@ export interface ApiPressReleasePressRelease
     > &
       Schema.Attribute.Private;
     media: Schema.Attribute.Component<'press-release.media', false>;
-    meta_info: Schema.Attribute.Component<'press-release.meta', false>;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     slug: Schema.Attribute.UID<'title'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
@@ -916,8 +917,8 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     media: Schema.Attribute.Component<'project.media', false>;
-    meta_info: Schema.Attribute.Component<'project.meta', false>;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     slug: Schema.Attribute.UID<'title'>;
     summary: Schema.Attribute.Component<'project.summary', false>;
     title: Schema.Attribute.String & Schema.Attribute.Required;

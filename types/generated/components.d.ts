@@ -438,6 +438,35 @@ export interface ProjectSummary extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedSeo extends Struct.ComponentSchema {
+  collectionName: 'components_shared_seos';
+  info: {
+    description: 'SEO metadata';
+    displayName: 'SEO';
+    icon: 'search';
+  };
+  attributes: {
+    canonicalURL: Schema.Attribute.String;
+    keywords: Schema.Attribute.Text;
+    metaDescription: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
+    metaRobots: Schema.Attribute.String;
+    metaTitle: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 60;
+      }>;
+    metaViewport: Schema.Attribute.String;
+    ogDescription: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 200;
+      }>;
+    ogImage: Schema.Attribute.Media<'images'>;
+    structuredData: Schema.Attribute.JSON;
+  };
+}
+
 export interface UiShortcut extends Struct.ComponentSchema {
   collectionName: 'components_ui_shortcuts';
   info: {
@@ -488,6 +517,7 @@ declare module '@strapi/strapi' {
       'project.media': ProjectMedia;
       'project.meta': ProjectMeta;
       'project.summary': ProjectSummary;
+      'shared.seo': SharedSeo;
       'ui.shortcut': UiShortcut;
     }
   }
