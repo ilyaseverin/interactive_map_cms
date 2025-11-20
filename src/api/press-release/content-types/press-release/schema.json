@@ -15,6 +15,6 @@
     "content_info": { "type": "component", "repeatable": false, "component": "press-release.content-info" },
     "media": { "type": "component", "repeatable": false, "component": "press-release.media" },
     "attachments_block": { "type": "component", "repeatable": false, "component": "press-release.attachments" },
-    "meta_info": { "type": "component", "repeatable": false, "component": "press-release.meta" }
+    "seo": { "type": "component", "repeatable": false, "component": "shared.seo" }
   }
 }

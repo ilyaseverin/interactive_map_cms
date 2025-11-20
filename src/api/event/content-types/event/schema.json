@@ -14,7 +14,7 @@
     "basic_info": { "type": "component", "repeatable": false, "component": "event.basic-info", "required": true },
     "location_info": { "type": "component", "repeatable": false, "component": "event.location-info" },
     "content_info": { "type": "component", "repeatable": false, "component": "event.content-info", "required": true },
-    "additional_materials": { "type": "component", "repeatable": false, "component": "event.additional-materials" }
+    "additional_materials": { "type": "component", "repeatable": false, "component": "event.additional-materials" },
+    "seo": { "type": "component", "repeatable": false, "component": "shared.seo" }
   }
 }
-

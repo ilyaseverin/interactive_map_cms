@@ -7,7 +7,16 @@
   "options": {},
   "attributes": {
     "datetime_start": { "type": "datetime", "required": true },
-    "category": { "type": "string" }
+    "category": { "type": "string" },
+    "event_type": {
+      "type": "enumeration",
+      "enum": [
+        "Человек дня",
+        "Событие дня",
+        "Тема дня",
+        "Фильм дня"
+      ]
+    }
   }
 }
 

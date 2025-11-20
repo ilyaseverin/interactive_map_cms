@@ -83,6 +83,14 @@ export interface EventBasicInfo extends Struct.ComponentSchema {
   attributes: {
     category: Schema.Attribute.String;
     datetime_start: Schema.Attribute.DateTime & Schema.Attribute.Required;
+    event_type: Schema.Attribute.Enumeration<
+      [
+        '\u0427\u0435\u043B\u043E\u0432\u0435\u043A \u0434\u043D\u044F',
+        '\u0421\u043E\u0431\u044B\u0442\u0438\u0435 \u0434\u043D\u044F',
+        '\u0422\u0435\u043C\u0430 \u0434\u043D\u044F',
+        '\u0424\u0438\u043B\u044C\u043C \u0434\u043D\u044F',
+      ]
+    >;
   };
 }
 
@@ -145,7 +153,7 @@ export interface MediaDocument extends Struct.ComponentSchema {
 export interface MediaVideoLink extends Struct.ComponentSchema {
   collectionName: 'components_media_video_links';
   info: {
-    description: '\u0412\u0438\u0434\u0435\u043E-\u0441\u0441\u044B\u043B\u043A\u0430 (YouTube/VK/RuTube/\u0414\u0440\u0443\u0433\u043E\u0435)';
+    description: '\u0412\u0438\u0434\u0435\u043E-\u0441\u0441\u044B\u043B\u043A\u0430 (YouTube/VK/RuTube/\u0414\u0440\u0443\u0433\u043E\u0435) \u0438\u043B\u0438 \u0437\u0430\u0433\u0440\u0443\u0437\u043A\u0430 \u0432\u0438\u0434\u0435\u043E \u0444\u0430\u0439\u043B\u0430';
     displayName: '\u0412\u0438\u0434\u0435\u043E-\u0441\u0441\u044B\u043B\u043A\u0430';
   };
   attributes: {
@@ -154,7 +162,8 @@ export interface MediaVideoLink extends Struct.ComponentSchema {
       ['YouTube', 'RuTube', 'VK', '\u0414\u0440\u0443\u0433\u043E\u0435']
     > &
       Schema.Attribute.DefaultTo<'\u0414\u0440\u0443\u0433\u043E\u0435'>;
-    url: Schema.Attribute.String & Schema.Attribute.Required;
+    url: Schema.Attribute.String;
+    video_file: Schema.Attribute.Media<'videos'>;
   };
 }
 
@@ -429,6 +438,35 @@ export interface ProjectSummary extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedSeo extends Struct.ComponentSchema {
+  collectionName: 'components_shared_seos';
+  info: {
+    description: 'SEO metadata';
+    displayName: 'SEO';
+    icon: 'search';
+  };
+  attributes: {
+    canonicalURL: Schema.Attribute.String;
+    keywords: Schema.Attribute.Text;
+    metaDescription: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
+    metaRobots: Schema.Attribute.String;
+    metaTitle: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 60;
+      }>;
+    metaViewport: Schema.Attribute.String;
+    ogDescription: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 200;
+      }>;
+    ogImage: Schema.Attribute.Media<'images'>;
+    structuredData: Schema.Attribute.JSON;
+  };
+}
+
 export interface UiShortcut extends Struct.ComponentSchema {
   collectionName: 'components_ui_shortcuts';
   info: {
@@ -479,6 +517,7 @@ declare module '@strapi/strapi' {
       'project.media': ProjectMedia;
       'project.meta': ProjectMeta;
       'project.summary': ProjectSummary;
+      'shared.seo': SharedSeo;
       'ui.shortcut': UiShortcut;
     }
   }
