@@ -3,11 +3,21 @@
   "info": { "displayName": "Содержание" },
   "options": {},
   "attributes": {
-    "title": { "type": "string" },
-    "brand_colors": { "type": "json" },
-    "symbols": { "type": "richtext" },
-    "logos": { "type": "media", "multiple": true, "allowedTypes": ["images"] },
-    "extra_info": { "type": "richtext" }
+    "logo_with_description": {
+      "type": "component",
+      "repeatable": false,
+      "component": "brand.logo-document"
+    },
+    "logos": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": ["images"]
+    },
+    "brand_colors": {
+      "type": "component",
+      "repeatable": true,
+      "component": "brand.color-item"
+    }
   }
 }
 

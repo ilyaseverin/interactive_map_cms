@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_brand_color_items",
+  "info": {
+    "displayName": "Цвет",
+    "description": "Ключевой цвет с текстовыми значениями (HEX, RGB, CMYK)"
+  },
+  "options": {},
+  "attributes": {
+    "color_name": {
+      "type": "string",
+      "required": false
+    },
+    "hex_value": {
+      "type": "string",
+      "required": false
+    },
+    "rgb_value": {
+      "type": "string",
+      "required": false
+    },
+    "cmyk_value": {
+      "type": "string",
+      "required": false
+    }
+  }
+}
+
