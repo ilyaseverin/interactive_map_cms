@@ -78,6 +78,17 @@ export interface ContactsPhone extends Struct.ComponentSchema {
   };
 }
 
+export interface DocumentAttachments extends Struct.ComponentSchema {
+  collectionName: 'components_document_attachments';
+  info: {
+    description: '\u041F\u0430\u043F\u043A\u0430 \u0441 \u0444\u0430\u0439\u043B\u0430\u043C\u0438 \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u0439';
+    displayName: '\u041F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u044F';
+  };
+  attributes: {
+    files: Schema.Attribute.Media<'files' | 'images', true>;
+  };
+}
+
 export interface DocumentBasicInfo extends Struct.ComponentSchema {
   collectionName: 'components_document_basic_infos';
   info: {
@@ -516,6 +527,7 @@ declare module '@strapi/strapi' {
       'brand.logo-document': BrandLogoDocument;
       'contacts.main': ContactsMain;
       'contacts.phone': ContactsPhone;
+      'document.attachments': DocumentAttachments;
       'document.basic-info': DocumentBasicInfo;
       'event.additional-materials': EventAdditionalMaterials;
       'event.basic-info': EventBasicInfo;

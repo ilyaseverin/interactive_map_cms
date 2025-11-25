@@ -559,12 +559,19 @@ export interface ApiDocumentDocument extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    basic_info: Schema.Attribute.Component<'document.basic-info', false> &
+    attachments: Schema.Attribute.Component<'document.attachments', false>;
+    category: Schema.Attribute.Enumeration<
+      [
+        '\u0420\u0435\u0435\u0441\u0442\u0440',
+        '\u041C\u0435\u0442\u043E\u0434. \u0420\u0435\u043A\u043E\u043C\u0435\u043D\u0434\u0430\u0446\u0438\u0438',
+      ]
+    > &
       Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    file: Schema.Attribute.Media<'files'>;
+    description: Schema.Attribute.Text;
+    files: Schema.Attribute.Media<'files' | 'images', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -573,7 +580,7 @@ export interface ApiDocumentDocument extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'title'>;
-    title: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

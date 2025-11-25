@@ -9,9 +9,23 @@
   },
   "options": { "draftAndPublish": true },
   "attributes": {
-    "title": { "type": "string" },
+    "title": { "type": "string", "required": true },
     "slug": { "type": "uid", "targetField": "title" },
-    "file": { "type": "media", "multiple": false, "allowedTypes": ["files"] },
-    "basic_info": { "type": "component", "repeatable": false, "component": "document.basic-info", "required": true }
+    "category": {
+      "type": "enumeration",
+      "enum": ["Реестр", "Метод. Рекомендации"],
+      "required": true
+    },
+    "description": { "type": "text", "required": false },
+    "files": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": ["files", "images"]
+    },
+    "attachments": {
+      "type": "component",
+      "repeatable": false,
+      "component": "document.attachments"
+    }
   }
 }

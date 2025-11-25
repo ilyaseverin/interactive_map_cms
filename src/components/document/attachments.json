@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_document_attachments",
+  "info": {
+    "displayName": "Приложения",
+    "description": "Папка с файлами приложений"
+  },
+  "options": {},
+  "attributes": {
+    "files": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": ["files", "images"]
+    }
+  }
+}
+
