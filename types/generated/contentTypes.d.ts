@@ -461,8 +461,7 @@ export interface ApiBattleGloryPointBattleGloryPoint
       Schema.Attribute.Private;
     description: Schema.Attribute.RichText & Schema.Attribute.Required;
     formatted_address: Schema.Attribute.Text;
-    geocoding_status: Schema.Attribute.String;
-    image: Schema.Attribute.Media<'images'>;
+    images: Schema.Attribute.Media<'images', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -480,7 +479,6 @@ export interface ApiBattleGloryPointBattleGloryPoint
       ]
     > &
       Schema.Attribute.Required;
-    preview_image: Schema.Attribute.Media<'images'>;
     publishedAt: Schema.Attribute.DateTime;
     region: Schema.Attribute.String;
     title: Schema.Attribute.String & Schema.Attribute.Required;
