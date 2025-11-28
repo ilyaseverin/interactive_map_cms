@@ -140,7 +140,7 @@ export interface EventContentInfo extends Struct.ComponentSchema {
   };
   attributes: {
     cover: Schema.Attribute.Media<'images'>;
-    description: Schema.Attribute.RichText & Schema.Attribute.Required;
+    description: Schema.Attribute.RichText;
     gallery: Schema.Attribute.Media<'images', true>;
   };
 }
