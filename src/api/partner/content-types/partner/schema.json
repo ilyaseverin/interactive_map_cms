@@ -12,6 +12,7 @@
     "name": { "type": "string", "required": true },
     "slug": { "type": "uid", "targetField": "name" },
     "url": { "type": "string" },
+    "vk_url": { "type": "string" },
     "logo": { "type": "media", "multiple": false, "allowedTypes": ["images"] }
   }
 }
