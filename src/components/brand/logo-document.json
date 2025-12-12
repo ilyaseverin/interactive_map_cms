@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_brand_logo_documents",
+  "info": {
+    "displayName": "Логотип с описанием",
+    "description": "Логотип с описанием и прикрепленными файлами (docx, pdf)"
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "text"
+    },
+    "files": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": ["files"]
+    }
+  }
+}
+

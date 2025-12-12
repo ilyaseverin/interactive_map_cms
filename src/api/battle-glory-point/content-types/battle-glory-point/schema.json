@@ -46,15 +46,9 @@
         "info": true
       }
     },
-    "image": {
+    "images": {
       "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": ["images"]
-    },
-    "preview_image": {
-      "type": "media",
-      "multiple": false,
+      "multiple": true,
       "required": false,
       "allowedTypes": ["images"]
     },
@@ -68,9 +62,6 @@
       "type": "string"
     },
     "object_name": {
-      "type": "string"
-    },
-    "geocoding_status": {
       "type": "string"
     },
     "original_number": {

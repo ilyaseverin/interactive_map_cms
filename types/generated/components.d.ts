@@ -11,17 +11,44 @@ export interface AboutContent extends Struct.ComponentSchema {
   };
 }
 
+export interface BrandColorItem extends Struct.ComponentSchema {
+  collectionName: 'components_brand_color_items';
+  info: {
+    description: '\u041A\u043B\u044E\u0447\u0435\u0432\u043E\u0439 \u0446\u0432\u0435\u0442 \u0441 \u0442\u0435\u043A\u0441\u0442\u043E\u0432\u044B\u043C\u0438 \u0437\u043D\u0430\u0447\u0435\u043D\u0438\u044F\u043C\u0438 (HEX, RGB, CMYK)';
+    displayName: '\u0426\u0432\u0435\u0442';
+  };
+  attributes: {
+    cmyk_value: Schema.Attribute.String;
+    color_name: Schema.Attribute.String;
+    hex_value: Schema.Attribute.String;
+    rgb_value: Schema.Attribute.String;
+  };
+}
+
 export interface BrandContent extends Struct.ComponentSchema {
   collectionName: 'components_brand_content';
   info: {
     displayName: '\u0421\u043E\u0434\u0435\u0440\u0436\u0430\u043D\u0438\u0435';
   };
   attributes: {
-    brand_colors: Schema.Attribute.JSON;
-    extra_info: Schema.Attribute.RichText;
+    brand_colors: Schema.Attribute.Component<'brand.color-item', true>;
+    logo_with_description: Schema.Attribute.Component<
+      'brand.logo-document',
+      false
+    >;
     logos: Schema.Attribute.Media<'images', true>;
-    symbols: Schema.Attribute.RichText;
-    title: Schema.Attribute.String;
+  };
+}
+
+export interface BrandLogoDocument extends Struct.ComponentSchema {
+  collectionName: 'components_brand_logo_documents';
+  info: {
+    description: '\u041B\u043E\u0433\u043E\u0442\u0438\u043F \u0441 \u043E\u043F\u0438\u0441\u0430\u043D\u0438\u0435\u043C \u0438 \u043F\u0440\u0438\u043A\u0440\u0435\u043F\u043B\u0435\u043D\u043D\u044B\u043C\u0438 \u0444\u0430\u0439\u043B\u0430\u043C\u0438 (docx, pdf)';
+    displayName: '\u041B\u043E\u0433\u043E\u0442\u0438\u043F \u0441 \u043E\u043F\u0438\u0441\u0430\u043D\u0438\u0435\u043C';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    files: Schema.Attribute.Media<'files', true>;
   };
 }
 
@@ -48,6 +75,17 @@ export interface ContactsPhone extends Struct.ComponentSchema {
   attributes: {
     label: Schema.Attribute.String;
     number: Schema.Attribute.String;
+  };
+}
+
+export interface DocumentAttachments extends Struct.ComponentSchema {
+  collectionName: 'components_document_attachments';
+  info: {
+    description: '\u041F\u0430\u043F\u043A\u0430 \u0441 \u0444\u0430\u0439\u043B\u0430\u043C\u0438 \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u0439';
+    displayName: '\u041F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u044F';
+  };
+  attributes: {
+    files: Schema.Attribute.Media<'files' | 'images', true>;
   };
 }
 
@@ -102,7 +140,7 @@ export interface EventContentInfo extends Struct.ComponentSchema {
   };
   attributes: {
     cover: Schema.Attribute.Media<'images'>;
-    description: Schema.Attribute.RichText & Schema.Attribute.Required;
+    description: Schema.Attribute.RichText;
     gallery: Schema.Attribute.Media<'images', true>;
   };
 }
@@ -484,9 +522,12 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'about.content': AboutContent;
+      'brand.color-item': BrandColorItem;
       'brand.content': BrandContent;
+      'brand.logo-document': BrandLogoDocument;
       'contacts.main': ContactsMain;
       'contacts.phone': ContactsPhone;
+      'document.attachments': DocumentAttachments;
       'document.basic-info': DocumentBasicInfo;
       'event.additional-materials': EventAdditionalMaterials;
       'event.basic-info': EventBasicInfo;

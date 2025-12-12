@@ -79,7 +79,6 @@ export default factories.createCoreController(
                   },
                   region: item.region,
                   object_name: item.object_name,
-                  geocoding_status: item.geocoding_status,
                   original_number: item.number,
                   publishedAt: new Date(),
                 },
