@@ -175,6 +175,21 @@ export interface HomepageHero extends Struct.ComponentSchema {
   };
 }
 
+export interface HomepageHeroSlide extends Struct.ComponentSchema {
+  collectionName: 'components_homepage_hero_slides';
+  info: {
+    description: '\u041E\u0434\u0438\u043D \u0441\u043B\u0430\u0439\u0434 \u0434\u043B\u044F hero slider';
+    displayName: 'Hero Slide';
+  };
+  attributes: {
+    buttonLink: Schema.Attribute.String;
+    buttonText: Schema.Attribute.String;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface MediaDocument extends Struct.ComponentSchema {
   collectionName: 'components_media_documents';
   info: {
@@ -534,6 +549,7 @@ declare module '@strapi/strapi' {
       'event.content-info': EventContentInfo;
       'event.location-info': EventLocationInfo;
       'homepage.hero': HomepageHero;
+      'homepage.hero-slide': HomepageHeroSlide;
       'media.document': MediaDocument;
       'media.video-link': MediaVideoLink;
       'meta.link': MetaLink;

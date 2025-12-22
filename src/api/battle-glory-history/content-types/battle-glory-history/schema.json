@@ -12,28 +12,9 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
-      "type": "string",
-      "default": "История Липецкой области в годы Великой Отечественной войны"
-    },
-    "description": {
-      "type": "richtext"
-    },
-    "municipalities_stats": {
-      "type": "json",
-      "description": "Статистика по муниципальным образованиям (ушедших и погибших)"
-    },
-    "total_departed": {
-      "type": "integer",
-      "description": "Общее количество ушедших на фронт"
-    },
-    "total_fallen": {
-      "type": "integer",
-      "description": "Общее количество погибших"
-    },
     "content": {
       "type": "richtext",
-      "description": "Подробное описание истории области в годы ВОВ"
+      "description": "Текст истории области в годы ВОВ"
     }
   }
 }
