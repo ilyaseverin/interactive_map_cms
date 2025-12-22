@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "hero_sliders",
+  "info": {
+    "singularName": "hero-slider",
+    "pluralName": "hero-sliders",
+    "displayName": "Hero Slider",
+    "description": "Слайдер для главной страницы с галереей картинок"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "slides": {
+      "type": "component",
+      "repeatable": true,
+      "component": "homepage.hero-slide",
+      "required": true
+    }
+  }
+}
+
