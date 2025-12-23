@@ -1,4 +1,4 @@
-﻿{
+{
   "kind": "singleType",
   "collectionName": "about",
   "info": {
@@ -7,8 +7,50 @@
     "displayName": "Об учреждении",
     "description": "Страница об учреждении"
   },
-  "options": { "draftAndPublish": true },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
   "attributes": {
-    "content": { "type": "component", "repeatable": false, "component": "about.content" }
+    "center_photo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "introduction_texts": {
+      "type": "text",
+      "repeatable": true,
+      "required": false
+    },
+    "goal_title": {
+      "type": "string",
+      "required": false,
+      "default": "Цель деятельности Учреждения:"
+    },
+    "goal_text": {
+      "type": "text",
+      "required": false
+    },
+    "subject_title": {
+      "type": "string",
+      "required": false,
+      "default": "Предмет деятельности Учреждения:"
+    },
+    "subject_text": {
+      "type": "text",
+      "required": false
+    },
+    "activities_title": {
+      "type": "string",
+      "required": false,
+      "default": "Основные виды деятельности Учреждения:"
+    },
+    "activities": {
+      "type": "text",
+      "repeatable": true,
+      "required": false
+    }
   }
 }
+

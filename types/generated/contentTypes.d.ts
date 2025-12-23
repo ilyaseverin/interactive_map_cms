@@ -385,14 +385,24 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    content: Schema.Attribute.Component<'about.content', false>;
+    activities: Schema.Attribute.Text;
+    activities_title: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'\u041E\u0441\u043D\u043E\u0432\u043D\u044B\u0435 \u0432\u0438\u0434\u044B \u0434\u0435\u044F\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u0438 \u0423\u0447\u0440\u0435\u0436\u0434\u0435\u043D\u0438\u044F:'>;
+    center_photo: Schema.Attribute.Media<'images'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    goal_text: Schema.Attribute.Text;
+    goal_title: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'\u0426\u0435\u043B\u044C \u0434\u0435\u044F\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u0438 \u0423\u0447\u0440\u0435\u0436\u0434\u0435\u043D\u0438\u044F:'>;
+    introduction_texts: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::about.about'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    subject_text: Schema.Attribute.Text;
+    subject_title: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'\u041F\u0440\u0435\u0434\u043C\u0435\u0442 \u0434\u0435\u044F\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u0438 \u0423\u0447\u0440\u0435\u0436\u0434\u0435\u043D\u0438\u044F:'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

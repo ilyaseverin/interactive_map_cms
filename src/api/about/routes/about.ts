@@ -1,4 +1,10 @@
-import { factories } from '@strapi/strapi';
+/**
+ * about router
+ */
 
-export default factories.createCoreRouter('api::about.about');
+import { factories } from "@strapi/strapi";
+
+export default factories.createCoreRouter(
+  "api::about.about"
+);
 
