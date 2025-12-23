@@ -489,7 +489,7 @@ export interface ApiBattleGloryPointBattleGloryPoint
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    video: Schema.Attribute.Media<'videos'>;
+    videos: Schema.Attribute.Media<'videos', true>;
   };
 }
 
