@@ -66,6 +66,10 @@
     },
     "original_number": {
       "type": "string"
+    },
+    "excel_id": {
+      "type": "integer",
+      "unique": true
     }
   }
 }
